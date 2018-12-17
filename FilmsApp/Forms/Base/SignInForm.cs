@@ -32,7 +32,8 @@ namespace FilmsApp.Forms.Base
             if (UserDAO.GetInstance().SignIn(textBoxLogin.Text, textBoxPassword.Text))
             {
                 MessageBox.Show("Авторизация успешно пройдена, " + UserDAO.GetInstance().Role, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //переход на другую форму
+                //переход к главному окну
+                ShowNextForm(new SelectedFilmForm());
             }
             else
                 MessageBox.Show("Авторизация не удалась, проверьте правильность ввода логина и пароля", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -45,6 +46,7 @@ namespace FilmsApp.Forms.Base
         private void buttonRegistration_Click(object sender, EventArgs e)
         {
             //открытие формы регистрации
+            ShowNextForm(new SignUpForm(), true);
         }
         /// <summary>
         /// произвести вход как посетитель
@@ -53,7 +55,13 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void buttonSignInAsVisitor_Click(object sender, EventArgs e)
         {
-            //вход с ролью 3
+            if (UserDAO.GetInstance().SignIn("user", "user"))
+            {
+                MessageBox.Show("Вы вошли, как посетитель", "Успешная авторизация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ShowNextForm(new SelectedFilmForm());
+            }
+            else
+                MessageBox.Show("Ошибка, вход как посетитель заблокирован", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         /// <summary>
         /// проверка правильности ввода логина
@@ -62,10 +70,11 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void textBoxLogin_TextChanged(object sender, EventArgs e)
         {
-            if (loginRegex.IsMatch(textBoxLogin.Text))
-                textBoxLogin.BackColor = Color.Green;
-            else
-                textBoxLogin.BackColor = Color.Red;
+            //добавить валидацию
+            //if (loginRegex.IsMatch(textBoxLogin.Text))
+            //    textBoxLogin.BackColor = Color.Green;
+            //else
+            //    textBoxLogin.BackColor = Color.Red;
         }
         /// <summary>
         /// проверка правильности ввода пароля
@@ -74,7 +83,7 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {
-
+            //добавить валидацию
         }
     }
 }

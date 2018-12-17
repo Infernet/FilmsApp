@@ -23,7 +23,12 @@ namespace FilmsApp.Classes.DAO
                 instance = new UserDAO();
             return instance;
         }
-
+        /// <summary>
+        /// Метод производящий авторизацию пользователя
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool SignIn(string login,string password)
         {
             Role="";
@@ -62,6 +67,59 @@ namespace FilmsApp.Classes.DAO
                 return true;
             else
                 return false;
+        }
+        /// <summary>
+        /// Метод производящий регистрацию на сервере
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <param name="role"></param>
+        /// <returns></returns>
+        public bool RegistrationUser(string login, string password, string role)
+        {
+            bool result=false;
+            using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
+            {
+                connection.Open();
+                SqlTransaction transaction = connection.BeginTransaction();
+                try
+                {
+                    SqlCommand registrationCommand = new SqlCommand("RegistrationUser", connection);
+                    registrationCommand.CommandType = CommandType.StoredProcedure;
+                    registrationCommand.Transaction = transaction;
+                    SqlParameter pLog = new SqlParameter("@Login", SqlDbType.NVarChar, 20);
+                    pLog.Value = login;
+                    SqlParameter pPas = new SqlParameter("@Password", SqlDbType.NVarChar, 20);
+                    pPas.Value = password;
+                    SqlParameter pRole = new SqlParameter("@Role", SqlDbType.NVarChar, 20);
+                    pRole.Value = role;
+                    SqlParameter pResult = new SqlParameter("@result", SqlDbType.Bit);
+                    pResult.Direction = ParameterDirection.Output;
+
+                    registrationCommand.Parameters.Add(pLog);
+                    registrationCommand.Parameters.Add(pPas);
+                    registrationCommand.Parameters.Add(pRole);
+                    registrationCommand.Parameters.Add(pResult);
+
+                    registrationCommand.ExecuteNonQuery();
+                    result =(bool)registrationCommand.Parameters["@result"].Value;
+                    if (result)
+                        transaction.Commit();
+                    else
+                        transaction.Rollback();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message, "Ошибка при попытке регистрации", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    transaction.Rollback();
+                }
+                if (result)
+                    return true;
+                else
+                    return false;
+            }
+
+            //return result;
         }
     }
 }
@@ -106,34 +164,7 @@ namespace FilmsApp.Classes.DAO
                 return false;
         }
 
-        public bool RegistrationUser(string login,string password,string role)
-        {
-            int result;
-            using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
-            {
-                connection.Open();
-                try
-                {
-                    SqlCommand registrationCommand = new SqlCommand("RegistrationUser", connection);
-                    registrationCommand.CommandType = CommandType.StoredProcedure;
-                    SqlParameter pLog = new SqlParameter("@Login", SqlDbType.NVarChar, 20);
-                    pLog.Value = login;
-                    SqlParameter pPas = new SqlParameter("@Password", SqlDbType.NVarChar, 20);
-                    pPas.Value = password;
-                    SqlParameter pResult = new SqlParameter("@result", SqlDbType.Bit);
-                    pResult.Direction = ParameterDirection.Output;
 
-                    
-                }
-                catch (Exception error)
-                {
-                    MessageBox.Show(error.Message, "Ошибка при попытке авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-
-            return result;
-        }
     }
 
  */

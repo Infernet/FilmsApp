@@ -16,5 +16,26 @@ namespace FilmsApp.Forms.Base
         {
             InitializeComponent();
         }
+
+        protected void ShowNextForm(BaseForm nextForm,bool isClose=false)
+        {
+            nextForm.StartPosition = FormStartPosition.Manual;
+            nextForm.Location = this.Location;
+
+
+            if (isClose)
+            {
+                Application.Run(nextForm);
+                this.Close();
+            }
+            else
+            {
+                
+                this.Hide();
+                nextForm.ShowDialog();
+                this.Show();
+            }
+           
+        }
     }
 }
