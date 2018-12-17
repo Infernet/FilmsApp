@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilmsApp.Classes.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace FilmsApp.Forms.Base
     /// </summary>
     public partial class SignInForm : BaseForm
     {
-        private Regex loginRegex = new Regex(@"^[^\D,\s](\w,[^А-ЯЁ] |[^а-яё]){2,19}$");
+        private Regex loginRegex = new Regex(@"^(([A-Z]|[a-z])([\w\D][^а-яё][^А-Яё]){2,5})$");
         public SignInForm()
         {
             InitializeComponent();
@@ -28,7 +29,13 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-
+            if (UserDAO.GetInstance().SignIn(textBoxLogin.Text, textBoxPassword.Text))
+            {
+                MessageBox.Show("Авторизация успешно пройдена, " + UserDAO.GetInstance().Role, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //переход на другую форму
+            }
+            else
+                MessageBox.Show("Авторизация не удалась, проверьте правильность ввода логина и пароля", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         /// <summary>
         /// переход на форму регистрации
@@ -37,7 +44,7 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void buttonRegistration_Click(object sender, EventArgs e)
         {
-
+            //открытие формы регистрации
         }
         /// <summary>
         /// произвести вход как посетитель
@@ -46,7 +53,7 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void buttonSignInAsVisitor_Click(object sender, EventArgs e)
         {
-
+            //вход с ролью 3
         }
         /// <summary>
         /// проверка правильности ввода логина

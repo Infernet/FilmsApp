@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DAO\UserDAO.cs" />
+    <Compile Include="Classes\SQL\SqlManipul.cs" />
     <Compile Include="Forms\Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +59,11 @@
     </Compile>
     <Compile Include="Forms\Base\SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +82,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="MovieDBDataSet.xsc">
+      <DependentUpon>MovieDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MovieDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MovieDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MovieDBDataSet.xss">
+      <DependentUpon>MovieDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,7 +107,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
     <Folder Include="Forms\Admin\" />
     <Folder Include="Forms\Moderator\" />
     <Folder Include="Forms\User\" />
