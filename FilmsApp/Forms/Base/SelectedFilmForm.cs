@@ -1,9 +1,7 @@
-﻿using FilmsApp.Classes.SQL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,33 +12,40 @@ namespace FilmsApp.Forms.Base
 {
     public partial class SelectedFilmForm : BaseForm
     {
-        
-
         public SelectedFilmForm()
         {
             InitializeComponent();
-            using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
+
+            
+        }
+
+        
+
+        private void SelectedFilmForm_Load_1(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet.vMovies". При необходимости она может быть перемещена или удалена.
+            this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                string command = @"select * from Movie";
-                connection.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(command, connection);
-                adapter.Fill(movieDBDataSet);
+                Image poster = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
+                dataGridView1.Rows[i].Cells["PosterImage"].Value = poster;
+
             }
-            dataGridView1.DataSource = movieDBDataSet.ViewPersonInMovie;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
-        private void SelectedFilmForm_Load(object sender, EventArgs e)
+        private void dataGridView1_Sorted(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet.ViewGenre". При необходимости она может быть перемещена или удалена.
-            this.viewGenreTableAdapter.Fill(this.movieDBDataSet.ViewGenre);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet.ViewPersonInMovie". При необходимости она может быть перемещена или удалена.
-            this.viewPersonInMovieTableAdapter.Fill(this.movieDBDataSet.ViewPersonInMovie);
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                Image poster = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
+                dataGridView1.Rows[i].Cells["PosterImage"].Value = poster;
 
+            }
         }
     }
 }

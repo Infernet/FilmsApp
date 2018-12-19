@@ -25,8 +25,9 @@ namespace FilmsApp.Forms.Base
 
             if (isClose)
             {
-                Application.Run(nextForm);
-                this.Close();
+                this.Hide();
+                nextForm.ShowDialog();
+                this.Show();
             }
             else
             {

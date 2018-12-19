@@ -7,118 +7,28 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MovieDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MovieDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FilmsApp.Properties.Settings.GlobalReference.Default.MovieDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewCountryTableAdapter" GeneratorDataComponentClassName="ViewCountryTableAdapter" Name="ViewCountry" UserDataComponentName="ViewCountryTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMoviesTableAdapter" GeneratorDataComponentClassName="vMoviesTableAdapter" Name="vMovies" UserDataComponentName="vMoviesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.ViewCountry" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.vMovies" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Название фильма], Страна, [ID фильма], [ID страны] FROM dbo.ViewCountry</CommandText>
+                    <CommandText>SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность (мин)], Жанр, Страна, Режиссёр, [Рейтинг /10] FROM dbo.vMovies</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Название фильма" DataSetColumn="Название фильма" />
-              <Mapping SourceColumn="Страна" DataSetColumn="Страна" />
-              <Mapping SourceColumn="ID фильма" DataSetColumn="ID фильма" />
-              <Mapping SourceColumn="ID страны" DataSetColumn="ID страны" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewGenreTableAdapter" GeneratorDataComponentClassName="ViewGenreTableAdapter" Name="ViewGenre" UserDataComponentName="ViewGenreTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.ViewGenre" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Название фильма], Жанр, [ID фильма], [ID жанра] FROM dbo.ViewGenre</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Название фильма" DataSetColumn="Название фильма" />
-              <Mapping SourceColumn="Жанр" DataSetColumn="Жанр" />
-              <Mapping SourceColumn="ID фильма" DataSetColumn="ID фильма" />
-              <Mapping SourceColumn="ID жанра" DataSetColumn="ID жанра" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewLanguageTableAdapter" GeneratorDataComponentClassName="ViewLanguageTableAdapter" Name="ViewLanguage" UserDataComponentName="ViewLanguageTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.ViewLanguage" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Название фильма], Язык, [ID фильма], [ID языка] FROM dbo.ViewLanguage</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Название фильма" DataSetColumn="Название фильма" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Poster" DataSetColumn="Poster" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Год выхода" DataSetColumn="Год выхода" />
               <Mapping SourceColumn="Язык" DataSetColumn="Язык" />
-              <Mapping SourceColumn="ID фильма" DataSetColumn="ID фильма" />
-              <Mapping SourceColumn="ID языка" DataSetColumn="ID языка" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewPersonInMovieTableAdapter" GeneratorDataComponentClassName="ViewPersonInMovieTableAdapter" Name="ViewPersonInMovie" UserDataComponentName="ViewPersonInMovieTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.ViewPersonInMovie" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Название фильма], Имя, Роль, [ID фильма], [ID человека], [ID роли] FROM dbo.ViewPersonInMovie</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Название фильма" DataSetColumn="Название фильма" />
-              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
-              <Mapping SourceColumn="Роль" DataSetColumn="Роль" />
-              <Mapping SourceColumn="ID фильма" DataSetColumn="ID фильма" />
-              <Mapping SourceColumn="ID человека" DataSetColumn="ID человека" />
-              <Mapping SourceColumn="ID роли" DataSetColumn="ID роли" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewProductionTableAdapter" GeneratorDataComponentClassName="ViewProductionTableAdapter" Name="ViewProduction" UserDataComponentName="ViewProductionTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.ViewProduction" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Название фильма], Компания, [ID фильма], [ID компании] FROM dbo.ViewProduction</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Название фильма" DataSetColumn="Название фильма" />
-              <Mapping SourceColumn="Компания" DataSetColumn="Компания" />
-              <Mapping SourceColumn="ID фильма" DataSetColumn="ID фильма" />
-              <Mapping SourceColumn="ID компании" DataSetColumn="ID компании" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewUsersTableAdapter" GeneratorDataComponentClassName="ViewUsersTableAdapter" Name="ViewUsers" UserDataComponentName="ViewUsersTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.ViewUsers" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Login, Password, Role FROM dbo.ViewUsers</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Login" DataSetColumn="Login" />
-              <Mapping SourceColumn="Password" DataSetColumn="Password" />
-              <Mapping SourceColumn="Role" DataSetColumn="Role" />
+              <Mapping SourceColumn="Длительность (мин)" DataSetColumn="Длительность (мин)" />
+              <Mapping SourceColumn="Жанр" DataSetColumn="Жанр" />
+              <Mapping SourceColumn="Страна" DataSetColumn="Страна" />
+              <Mapping SourceColumn="Режиссёр" DataSetColumn="Режиссёр" />
+              <Mapping SourceColumn="Рейтинг /10" DataSetColumn="Рейтинг /10" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -130,163 +40,63 @@
   <xs:element name="MovieDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MovieDBDataSet" msprop:Generator_UserDSName="MovieDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ViewCountry" msprop:Generator_TableClassName="ViewCountryDataTable" msprop:Generator_TableVarName="tableViewCountry" msprop:Generator_RowChangedName="ViewCountryRowChanged" msprop:Generator_TablePropName="ViewCountry" msprop:Generator_RowDeletingName="ViewCountryRowDeleting" msprop:Generator_RowChangingName="ViewCountryRowChanging" msprop:Generator_RowEvHandlerName="ViewCountryRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewCountryRowDeleted" msprop:Generator_RowClassName="ViewCountryRow" msprop:Generator_UserTableName="ViewCountry" msprop:Generator_RowEvArgName="ViewCountryRowChangeEvent">
+        <xs:element name="vMovies" msprop:Generator_TableClassName="vMoviesDataTable" msprop:Generator_TableVarName="tablevMovies" msprop:Generator_TablePropName="vMovies" msprop:Generator_RowDeletingName="vMoviesRowDeleting" msprop:Generator_RowChangingName="vMoviesRowChanging" msprop:Generator_RowEvHandlerName="vMoviesRowChangeEventHandler" msprop:Generator_RowDeletedName="vMoviesRowDeleted" msprop:Generator_UserTableName="vMovies" msprop:Generator_RowChangedName="vMoviesRowChanged" msprop:Generator_RowEvArgName="vMoviesRowChangeEvent" msprop:Generator_RowClassName="vMoviesRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Название_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnНазвание_фильма" msprop:Generator_ColumnPropNameInRow="Название_фильма" msprop:Generator_ColumnPropNameInTable="Название_фильмаColumn" msprop:Generator_UserColumnName="Название фильма">
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Poster" msprop:Generator_ColumnVarNameInTable="columnPoster" msprop:Generator_ColumnPropNameInRow="Poster" msprop:Generator_ColumnPropNameInTable="PosterColumn" msprop:Generator_UserColumnName="Poster">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Страна" msprop:Generator_ColumnVarNameInTable="columnСтрана" msprop:Generator_ColumnPropNameInRow="Страна" msprop:Generator_ColumnPropNameInTable="СтранаColumn" msprop:Generator_UserColumnName="Страна">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnID_фильма" msprop:Generator_ColumnPropNameInRow="ID_фильма" msprop:Generator_ColumnPropNameInTable="ID_фильмаColumn" msprop:Generator_UserColumnName="ID фильма" type="xs:int" />
-              <xs:element name="ID_x0020_страны" msprop:Generator_ColumnVarNameInTable="columnID_страны" msprop:Generator_ColumnPropNameInRow="ID_страны" msprop:Generator_ColumnPropNameInTable="ID_страныColumn" msprop:Generator_UserColumnName="ID страны" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ViewGenre" msprop:Generator_TableClassName="ViewGenreDataTable" msprop:Generator_TableVarName="tableViewGenre" msprop:Generator_RowChangedName="ViewGenreRowChanged" msprop:Generator_TablePropName="ViewGenre" msprop:Generator_RowDeletingName="ViewGenreRowDeleting" msprop:Generator_RowChangingName="ViewGenreRowChanging" msprop:Generator_RowEvHandlerName="ViewGenreRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewGenreRowDeleted" msprop:Generator_RowClassName="ViewGenreRow" msprop:Generator_UserTableName="ViewGenre" msprop:Generator_RowEvArgName="ViewGenreRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Название_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnНазвание_фильма" msprop:Generator_ColumnPropNameInRow="Название_фильма" msprop:Generator_ColumnPropNameInTable="Название_фильмаColumn" msprop:Generator_UserColumnName="Название фильма">
+              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Жанр" msprop:Generator_ColumnVarNameInTable="columnЖанр" msprop:Generator_ColumnPropNameInRow="Жанр" msprop:Generator_ColumnPropNameInTable="ЖанрColumn" msprop:Generator_UserColumnName="Жанр">
+              <xs:element name="Год_x0020_выхода" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnГод_выхода" msprop:Generator_ColumnPropNameInRow="Год_выхода" msprop:Generator_ColumnPropNameInTable="Год_выходаColumn" msprop:Generator_UserColumnName="Год выхода" type="xs:int" minOccurs="0" />
+              <xs:element name="Язык" msprop:Generator_ColumnVarNameInTable="columnЯзык" msprop:Generator_ColumnPropNameInRow="Язык" msprop:Generator_ColumnPropNameInTable="ЯзыкColumn" msprop:Generator_UserColumnName="Язык" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
+                    <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnID_фильма" msprop:Generator_ColumnPropNameInRow="ID_фильма" msprop:Generator_ColumnPropNameInTable="ID_фильмаColumn" msprop:Generator_UserColumnName="ID фильма" type="xs:int" />
-              <xs:element name="ID_x0020_жанра" msprop:Generator_ColumnVarNameInTable="columnID_жанра" msprop:Generator_ColumnPropNameInRow="ID_жанра" msprop:Generator_ColumnPropNameInTable="ID_жанраColumn" msprop:Generator_UserColumnName="ID жанра" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ViewLanguage" msprop:Generator_TableClassName="ViewLanguageDataTable" msprop:Generator_TableVarName="tableViewLanguage" msprop:Generator_RowChangedName="ViewLanguageRowChanged" msprop:Generator_TablePropName="ViewLanguage" msprop:Generator_RowDeletingName="ViewLanguageRowDeleting" msprop:Generator_RowChangingName="ViewLanguageRowChanging" msprop:Generator_RowEvHandlerName="ViewLanguageRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewLanguageRowDeleted" msprop:Generator_RowClassName="ViewLanguageRow" msprop:Generator_UserTableName="ViewLanguage" msprop:Generator_RowEvArgName="ViewLanguageRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Название_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnНазвание_фильма" msprop:Generator_ColumnPropNameInRow="Название_фильма" msprop:Generator_ColumnPropNameInTable="Название_фильмаColumn" msprop:Generator_UserColumnName="Название фильма">
+              <xs:element name="Длительность_x0020__x0028_мин_x0029_" msprop:Generator_ColumnVarNameInTable="_columnДлительность__мин_" msprop:Generator_ColumnPropNameInRow="_Длительность__мин_" msprop:Generator_ColumnPropNameInTable="_Длительность__мин_Column" msprop:Generator_UserColumnName="Длительность (мин)" type="xs:int" />
+              <xs:element name="Жанр" msprop:Generator_ColumnVarNameInTable="columnЖанр" msprop:Generator_ColumnPropNameInRow="Жанр" msprop:Generator_ColumnPropNameInTable="ЖанрColumn" msprop:Generator_UserColumnName="Жанр" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Язык" msprop:Generator_ColumnVarNameInTable="columnЯзык" msprop:Generator_ColumnPropNameInRow="Язык" msprop:Generator_ColumnPropNameInTable="ЯзыкColumn" msprop:Generator_UserColumnName="Язык">
+              <xs:element name="Страна" msprop:Generator_ColumnVarNameInTable="columnСтрана" msprop:Generator_ColumnPropNameInRow="Страна" msprop:Generator_ColumnPropNameInTable="СтранаColumn" msprop:Generator_UserColumnName="Страна" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
+                    <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnID_фильма" msprop:Generator_ColumnPropNameInRow="ID_фильма" msprop:Generator_ColumnPropNameInTable="ID_фильмаColumn" msprop:Generator_UserColumnName="ID фильма" type="xs:int" />
-              <xs:element name="ID_x0020_языка" msprop:Generator_ColumnVarNameInTable="columnID_языка" msprop:Generator_ColumnPropNameInRow="ID_языка" msprop:Generator_ColumnPropNameInTable="ID_языкаColumn" msprop:Generator_UserColumnName="ID языка" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ViewPersonInMovie" msprop:Generator_TableClassName="ViewPersonInMovieDataTable" msprop:Generator_TableVarName="tableViewPersonInMovie" msprop:Generator_RowChangedName="ViewPersonInMovieRowChanged" msprop:Generator_TablePropName="ViewPersonInMovie" msprop:Generator_RowDeletingName="ViewPersonInMovieRowDeleting" msprop:Generator_RowChangingName="ViewPersonInMovieRowChanging" msprop:Generator_RowEvHandlerName="ViewPersonInMovieRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewPersonInMovieRowDeleted" msprop:Generator_RowClassName="ViewPersonInMovieRow" msprop:Generator_UserTableName="ViewPersonInMovie" msprop:Generator_RowEvArgName="ViewPersonInMovieRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Название_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnНазвание_фильма" msprop:Generator_ColumnPropNameInRow="Название_фильма" msprop:Generator_ColumnPropNameInTable="Название_фильмаColumn" msprop:Generator_UserColumnName="Название фильма">
+              <xs:element name="Режиссёр" msprop:Generator_ColumnVarNameInTable="columnРежиссёр" msprop:Generator_ColumnPropNameInRow="Режиссёр" msprop:Generator_ColumnPropNameInTable="РежиссёрColumn" msprop:Generator_UserColumnName="Режиссёр" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="60" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Роль" msprop:Generator_ColumnVarNameInTable="columnРоль" msprop:Generator_ColumnPropNameInRow="Роль" msprop:Generator_ColumnPropNameInTable="РольColumn" msprop:Generator_UserColumnName="Роль">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnID_фильма" msprop:Generator_ColumnPropNameInRow="ID_фильма" msprop:Generator_ColumnPropNameInTable="ID_фильмаColumn" msprop:Generator_UserColumnName="ID фильма" type="xs:int" />
-              <xs:element name="ID_x0020_человека" msprop:Generator_ColumnVarNameInTable="columnID_человека" msprop:Generator_ColumnPropNameInRow="ID_человека" msprop:Generator_ColumnPropNameInTable="ID_человекаColumn" msprop:Generator_UserColumnName="ID человека" type="xs:int" />
-              <xs:element name="ID_x0020_роли" msprop:Generator_ColumnVarNameInTable="columnID_роли" msprop:Generator_ColumnPropNameInRow="ID_роли" msprop:Generator_ColumnPropNameInTable="ID_ролиColumn" msprop:Generator_UserColumnName="ID роли" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ViewProduction" msprop:Generator_TableClassName="ViewProductionDataTable" msprop:Generator_TableVarName="tableViewProduction" msprop:Generator_RowChangedName="ViewProductionRowChanged" msprop:Generator_TablePropName="ViewProduction" msprop:Generator_RowDeletingName="ViewProductionRowDeleting" msprop:Generator_RowChangingName="ViewProductionRowChanging" msprop:Generator_RowEvHandlerName="ViewProductionRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewProductionRowDeleted" msprop:Generator_RowClassName="ViewProductionRow" msprop:Generator_UserTableName="ViewProduction" msprop:Generator_RowEvArgName="ViewProductionRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Название_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnНазвание_фильма" msprop:Generator_ColumnPropNameInRow="Название_фильма" msprop:Generator_ColumnPropNameInTable="Название_фильмаColumn" msprop:Generator_UserColumnName="Название фильма">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Компания" msprop:Generator_ColumnVarNameInTable="columnКомпания" msprop:Generator_ColumnPropNameInRow="Компания" msprop:Generator_ColumnPropNameInTable="КомпанияColumn" msprop:Generator_UserColumnName="Компания">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID_x0020_фильма" msprop:Generator_ColumnVarNameInTable="columnID_фильма" msprop:Generator_ColumnPropNameInRow="ID_фильма" msprop:Generator_ColumnPropNameInTable="ID_фильмаColumn" msprop:Generator_UserColumnName="ID фильма" type="xs:int" />
-              <xs:element name="ID_x0020_компании" msprop:Generator_ColumnVarNameInTable="columnID_компании" msprop:Generator_ColumnPropNameInRow="ID_компании" msprop:Generator_ColumnPropNameInTable="ID_компанииColumn" msprop:Generator_UserColumnName="ID компании" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ViewUsers" msprop:Generator_TableClassName="ViewUsersDataTable" msprop:Generator_TableVarName="tableViewUsers" msprop:Generator_RowChangedName="ViewUsersRowChanged" msprop:Generator_TablePropName="ViewUsers" msprop:Generator_RowDeletingName="ViewUsersRowDeleting" msprop:Generator_RowChangingName="ViewUsersRowChanging" msprop:Generator_RowEvHandlerName="ViewUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewUsersRowDeleted" msprop:Generator_RowClassName="ViewUsersRow" msprop:Generator_UserTableName="ViewUsers" msprop:Generator_RowEvArgName="ViewUsersRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Login" msprop:Generator_ColumnVarNameInTable="columnLogin" msprop:Generator_ColumnPropNameInRow="Login" msprop:Generator_ColumnPropNameInTable="LoginColumn" msprop:Generator_UserColumnName="Login">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Role" msprop:Generator_ColumnVarNameInTable="columnRole" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_UserColumnName="Role">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="Рейтинг_x0020__x002F_10" msprop:Generator_ColumnVarNameInTable="_columnРейтинг__10" msprop:Generator_ColumnPropNameInRow="_Рейтинг__10" msprop:Generator_ColumnPropNameInTable="_Рейтинг__10Column" msprop:Generator_UserColumnName="Рейтинг /10" type="xs:double" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:ViewPersonInMovie" />
-      <xs:field xpath="mstns:ID_x0020_фильма" />
-      <xs:field xpath="mstns:ID_x0020_человека" />
-      <xs:field xpath="mstns:ID_x0020_роли" />
-    </xs:unique>
-    <xs:unique name="ViewUsers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:ViewUsers" />
-      <xs:field xpath="mstns:Login" />
-      <xs:field xpath="mstns:Password" />
+      <xs:selector xpath=".//mstns:vMovies" />
+      <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
 </xs:schema>
