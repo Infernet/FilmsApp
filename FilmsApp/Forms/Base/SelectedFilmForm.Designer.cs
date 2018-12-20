@@ -29,6 +29,9 @@ namespace FilmsApp.Forms.Base
             this.movieDBDataSet = new FilmsApp.MovieDBDataSet();
             this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonSelectFilther = new System.Windows.Forms.Button();
+            this.buttonShowMovie = new System.Windows.Forms.Button();
+            this.buttonFilmAdd = new System.Windows.Forms.Button();
             this.PosterImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.FilmIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posterData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +46,7 @@ namespace FilmsApp.Forms.Base
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -76,6 +80,7 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1221, 672);
@@ -99,6 +104,9 @@ namespace FilmsApp.Forms.Base
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonFilmAdd);
+            this.groupBox1.Controls.Add(this.buttonShowMovie);
+            this.groupBox1.Controls.Add(this.buttonSelectFilther);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 572);
             this.groupBox1.Name = "groupBox1";
@@ -106,9 +114,37 @@ namespace FilmsApp.Forms.Base
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // buttonSelectFilther
+            // 
+            this.buttonSelectFilther.Location = new System.Drawing.Point(587, 45);
+            this.buttonSelectFilther.Name = "buttonSelectFilther";
+            this.buttonSelectFilther.Size = new System.Drawing.Size(75, 23);
+            this.buttonSelectFilther.TabIndex = 0;
+            this.buttonSelectFilther.Text = "Фильтр";
+            this.buttonSelectFilther.UseVisualStyleBackColor = true;
+            this.buttonSelectFilther.Click += new System.EventHandler(this.buttonSelectFilther_Click);
+            // 
+            // buttonShowMovie
+            // 
+            this.buttonShowMovie.Location = new System.Drawing.Point(363, 45);
+            this.buttonShowMovie.Name = "buttonShowMovie";
+            this.buttonShowMovie.Size = new System.Drawing.Size(138, 23);
+            this.buttonShowMovie.TabIndex = 1;
+            this.buttonShowMovie.Text = "Подробнее о фильме";
+            this.buttonShowMovie.UseVisualStyleBackColor = true;
+            // 
+            // buttonFilmAdd
+            // 
+            this.buttonFilmAdd.Location = new System.Drawing.Point(767, 44);
+            this.buttonFilmAdd.Name = "buttonFilmAdd";
+            this.buttonFilmAdd.Size = new System.Drawing.Size(160, 23);
+            this.buttonFilmAdd.TabIndex = 2;
+            this.buttonFilmAdd.Text = "Добавление фильма в базу";
+            this.buttonFilmAdd.UseVisualStyleBackColor = true;
+            // 
             // PosterImage
             // 
-            this.PosterImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PosterImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.PosterImage.FillWeight = 182F;
             this.PosterImage.HeaderText = "Постер";
             this.PosterImage.MinimumWidth = 182;
@@ -214,6 +250,7 @@ namespace FilmsApp.Forms.Base
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -222,6 +259,10 @@ namespace FilmsApp.Forms.Base
         private MovieDBDataSet movieDBDataSet;
         private System.Windows.Forms.BindingSource vMoviesBindingSource;
         private MovieDBDataSetTableAdapters.vMoviesTableAdapter vMoviesTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonFilmAdd;
+        private System.Windows.Forms.Button buttonShowMovie;
+        private System.Windows.Forms.Button buttonSelectFilther;
         private System.Windows.Forms.DataGridViewImageColumn PosterImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn FilmIdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posterData;
@@ -233,6 +274,5 @@ namespace FilmsApp.Forms.Base
         private System.Windows.Forms.DataGridViewTextBoxColumn странаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn режиссёрDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn рейтинг10DataGridViewTextBoxColumn;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
