@@ -26,7 +26,7 @@ namespace FilmsApp.Forms.Base
         private void SelectedFilmForm_Load_1(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet.vMovies". При необходимости она может быть перемещена или удалена.
-            //this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
+            this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
             //adapter.Fill(this.movieDBDataSet.vMovies); использовать для перебора с учетом фильтра
             
          
@@ -63,26 +63,34 @@ namespace FilmsApp.Forms.Base
                 case DialogResult.Yes:
                     {
                         MessageBox.Show("Фильтрация");
-                        //using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
-                        //{
-                        //    connection.Open();
-                        //    SqlCommand command = SqlManipul.GetInstance().GetFilterCommand();
-                        //    command.Connection = connection;
-                        //    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        //    adapter.Fill(this.movieDBDataSet.vMovies);
-
-                        //}
-                        SqlCommand command = SqlManipul.GetInstance().GetFilterCommand();
-                        vMoviesTableAdapter.Adapter.SelectCommand.CommandText = command.CommandText;
-                        List<SqlParameter> paramList = new List<SqlParameter>();
-                        foreach (SqlParameter item in command.Parameters)
+                        using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
                         {
-                            paramList.Add(item);
+                            connection.Open();
+                            SqlCommand command = SqlManipul.GetInstance().GetFilterCommand();
+                            command.Connection = connection;
+                            SqlDataAdapter adapter = new SqlDataAdapter(command);
+                            this.movieDBDataSet.vMovies.Clear();
+                            adapter.Fill(this.movieDBDataSet.vMovies);
+
                         }
-                        command.Parameters.Clear();
-                        foreach (SqlParameter param in paramList)
-                            vMoviesTableAdapter.Adapter.SelectCommand.Parameters.Add(param); 
-                        this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
+                        dataGridView1.DataSource=movieDBDataSet.vMovies;
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            Image poster = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
+                            dataGridView1.Rows[i].Cells["PosterImage"].Value = poster;
+
+                        }
+                        //SqlCommand command = SqlManipul.GetInstance().GetFilterCommand();
+                        //vMoviesTableAdapter.Adapter.SelectCommand.CommandText = command.CommandText;
+                        //List<SqlParameter> paramList = new List<SqlParameter>();
+                        //foreach (SqlParameter item in command.Parameters)
+                        //{
+                        //    paramList.Add(item);
+                        //}
+                        //command.Parameters.Clear();
+                        //foreach (SqlParameter param in paramList)
+                        //    vMoviesTableAdapter.Adapter.SelectCommand.Parameters.Add(param); 
+                        //this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
                     }
                     break;
                 case DialogResult.No:
@@ -90,6 +98,12 @@ namespace FilmsApp.Forms.Base
                         MessageBox.Show("Сброс");
                         vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
                         dataGridView1.Update();
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            Image poster = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
+                            dataGridView1.Rows[i].Cells["PosterImage"].Value = poster;
+
+                        }
                     }
                     break;
                 default:

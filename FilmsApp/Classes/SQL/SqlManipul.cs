@@ -32,7 +32,8 @@ namespace FilmsApp.Classes.SQL
         public SqlCommand GetFilterCommand()
         {
             SqlCommand command = new SqlCommand();
-            string commandText = "SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность(мин)], Жанр, Страна, Режиссёр, [Рейтинг / 10] FROM dbo.vMovies ";
+            //SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность(мин)], Жанр, Страна, Режиссёр, [Рейтинг / 10]
+            string commandText = "select * FROM dbo.vMovies ";
             //если хоть один фильтр выбран
             if(GenreFilterId!=-1 || CountryFilterId!=-1 || YearFilterVal != -1 ||DirectorFilterId!=-1 ||LanguageFilterId!=-1 ||RatedFilterId!=-1)
             {
