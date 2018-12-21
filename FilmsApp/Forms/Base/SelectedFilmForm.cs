@@ -21,15 +21,16 @@ namespace FilmsApp.Forms.Base
             
         }
 
-
+        private bool cnt = false;
 
         private void SelectedFilmForm_Load_1(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet.vMovies". При необходимости она может быть перемещена или удалена.
             this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
             //adapter.Fill(this.movieDBDataSet.vMovies); использовать для перебора с учетом фильтра
-            
-         
+
+
+            cnt = true;
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -41,7 +42,17 @@ namespace FilmsApp.Forms.Base
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            //MessageBox.Show(dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString(), dataGridView1.SelectedRows[0].Cells["Название"].Value.ToString());
+            //MessageBox.Show(dataGridView1.CurrentRow.Cells["ID"].Value.ToString(), dataGridView1.CurrentRow.Cells["Название"].Value.ToString());
+            //MessageBox.Show(dataGridView1.CurrentRow.Cells[0].Value.ToString(), dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            try
+            {
+                MessageBox.Show(dataGridView1.CurrentRow.Cells[1].Value.ToString(), dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
         private void dataGridView1_Sorted(object sender, EventArgs e)
@@ -97,7 +108,7 @@ namespace FilmsApp.Forms.Base
                     {
                         MessageBox.Show("Сброс");
                         vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
-                        dataGridView1.Update();
+                        dataGridView1.DataSource = movieDBDataSet.vMovies;
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             Image poster = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
@@ -111,6 +122,22 @@ namespace FilmsApp.Forms.Base
             }
         }
 
-        
+        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    MessageBox.Show(dataGridView1.CurrentRow.Cells[1].Value.ToString(), dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            //}
+            //catch (Exception error)
+            //{
+            //    MessageBox.Show(error.Message);
+            //}
+                
+        }
+
+        private void buttonShowSelectedFilm_Click(object sender, EventArgs e)
+        {
+            ShowNextForm(new ShowFilmForm(), false);
+        }
     }
 }

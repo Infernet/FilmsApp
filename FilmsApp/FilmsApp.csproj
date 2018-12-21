@@ -66,6 +66,12 @@
     <Compile Include="Forms\Base\SelectedFilmForm.Designer.cs">
       <DependentUpon>SelectedFilmForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Base\ShowFilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\ShowFilmForm.Designer.cs">
+      <DependentUpon>ShowFilmForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Base\SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Base\SelectedFilmForm.resx">
       <DependentUpon>SelectedFilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Base\ShowFilmForm.resx">
+      <DependentUpon>ShowFilmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Base\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -134,9 +143,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Admin\" />
-    <Folder Include="Forms\Moderator\" />
-    <Folder Include="Forms\User\" />
     <Folder Include="Resources\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
