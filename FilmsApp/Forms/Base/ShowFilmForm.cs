@@ -1,4 +1,5 @@
 ﻿using FilmsApp.Classes.SQL;
+using FilmsApp.Forms.SelectedFilmForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,9 @@ namespace FilmsApp.Forms.Base
 {
     public partial class ShowFilmForm : BaseForm
     {
+        private MovieDBDataSet dataSet = SqlManipul.GetInstance().DataSetMovies;
+        private string cmd = "ID=" + SqlManipul.GetInstance().CurrentFilmId.ToString();
+
         public ShowFilmForm()
         {
             InitializeComponent();
@@ -29,8 +33,8 @@ namespace FilmsApp.Forms.Base
         private void LoadData()
         {
             //ссылка на dataset и команда выбора данных по выбранному фильму
-            MovieDBDataSet dataSet = SqlManipul.GetInstance().DataSetMovies;
-            string cmd = "ID=" + SqlManipul.GetInstance().CurrentFilmId.ToString();
+            //MovieDBDataSet dataSet = SqlManipul.GetInstance().DataSetMovies;
+            //string cmd = "ID=" + SqlManipul.GetInstance().CurrentFilmId.ToString();
             //Заполнение базовыми данными
             picturePoster.Image = new Bitmap(Application.StartupPath + @"\Resources\Images\" + dataSet.Tables[0].Select(cmd)[0]["Poster"].ToString());
             lTitle.Text = dataSet.Tables[0].Select(cmd)[0]["Название"].ToString();
@@ -44,20 +48,21 @@ namespace FilmsApp.Forms.Base
             tbCountry.Text = dataSet.Tables[0].Select(cmd)[0]["Страна"].ToString();
             tbDirector.Text = dataSet.Tables[0].Select(cmd)[0]["Режиссёр"].ToString();
             tbPlot.Text = dataSet.Tables[0].Select(cmd)[0]["Описание"].ToString();
+            numericRating.Value =decimal.Parse( dataSet.Tables[0].Select(cmd)[0]["Рейтинг /10"].ToString());
             //Заполнение опциональных данных
-            if (dataSet.Tables[0].Select(cmd)[0]["Год"] != null)
+            if (dataSet.Tables[0].Select(cmd)[0]["Год"] != null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["Год"].ToString()))
             {
                 lYear.Visible = true;
                 tbYearReleased.Visible = true;
                 tbYearReleased.Text = dataSet.Tables[0].Select(cmd)[0]["Год"].ToString();
             }
-            if (dataSet.Tables[0].Select(cmd)[0]["IMDB rated"]!=null)
+            if (dataSet.Tables[0].Select(cmd)[0]["IMDB rated"]!= null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["IMDB rated"].ToString()))
             {
                 lImdbRating.Visible = true;
                 tbImdbRated.Visible = true;
                 tbImdbRated.Text = dataSet.Tables[0].Select(cmd)[0]["IMDB rated"].ToString()+"/10";
             }
-            if (dataSet.Tables[0].Select(cmd)[0]["IMDB Votes"] != null)
+            if (dataSet.Tables[0].Select(cmd)[0]["IMDB Votes"] != null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["IMDB Votes"].ToString()))
             {
                 lImdbVotes.Visible = true;
                 tbImdbVotes.Visible = true;
@@ -76,25 +81,25 @@ namespace FilmsApp.Forms.Base
                 tbWebSite.Visible = true;
                 tbWebSite.Text = @dataSet.Tables[0].Select(cmd)[0]["Сайт"].ToString();
             }
-            if (dataSet.Tables[0].Select(cmd)[0]["Награды"] != null)
+            if (dataSet.Tables[0].Select(cmd)[0]["Награды"] != null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["Награды"].ToString()))
             {
                 lAwards.Visible = true;
                 tbAwards.Visible = true;
                 tbAwards.Text = dataSet.Tables[0].Select(cmd)[0]["Награды"].ToString();
             }
-            if (dataSet.Tables[0].Select(cmd)[0]["Актёрский состав"] != null)
+            if (dataSet.Tables[0].Select(cmd)[0]["Актёрский состав"] != null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["Актёрский состав"].ToString()))
             {
                 lActors.Visible = true;
                 tbActors.Visible = true;
                 tbActors.Text = dataSet.Tables[0].Select(cmd)[0]["Актёрский состав"].ToString();
             }
-            if (dataSet.Tables[0].Select(cmd)[0]["Сценарий"] != null)
+            if (dataSet.Tables[0].Select(cmd)[0]["Сценарий"] != null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["Сценарий"].ToString()))
             {
                 lWriters.Visible = true;
                 tbWriters.Visible = true;
                 tbWriters.Text = dataSet.Tables[0].Select(cmd)[0]["Сценарий"].ToString();
             }
-            if (dataSet.Tables[0].Select(cmd)[0]["MetaScore"] != null)
+            if (dataSet.Tables[0].Select(cmd)[0]["MetaScore"] != null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["MetaScore"].ToString()))
             {
                 lMetascore.Visible = true;
                 tbMetaScore.Visible = true;
@@ -107,12 +112,27 @@ namespace FilmsApp.Forms.Base
                 tbBoxOffice.Visible = true;
                 tbBoxOffice.Text ="$ "+ dataSet.Tables[0].Select(cmd)[0]["Кассовые сборы"].ToString();
             }
-            if (dataSet.Tables[0].Select(cmd)[0]["Производство"] != null)
+            if (dataSet.Tables[0].Select(cmd)[0]["Производство"] != null && !String.IsNullOrEmpty(dataSet.Tables[0].Select(cmd)[0]["Производство"].ToString()))
             {
                 lProduction.Visible = true;
                 tbProduction.Visible = true;
                 tbProduction.Text = dataSet.Tables[0].Select(cmd)[0]["Производство"].ToString();
             }
+        }
+
+        private void picturePoster_Click(object sender, EventArgs e)
+        {
+            ShowNextForm(new PrintOrSavePosterForm(), true);
+        }
+
+        private void numericRating_ValueChanged(object sender, EventArgs e)
+        {
+            dataSet.Tables[0].Select(cmd)[0]["Рейтинг /10"] = numericRating.Value;   
+        }
+
+        private void buttonShowFeedBack_Click(object sender, EventArgs e)
+        {
+            ShowNextForm(new ShowFeedBackFirmForm(), true);
         }
     }
 }

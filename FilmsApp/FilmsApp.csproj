@@ -84,6 +84,24 @@
     <Compile Include="Forms\Base\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SelectedFilmForms\FeedBackAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectedFilmForms\FeedBackAddForm.Designer.cs">
+      <DependentUpon>FeedBackAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectedFilmForms\PrintOrSavePosterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectedFilmForms\PrintOrSavePosterForm.Designer.cs">
+      <DependentUpon>PrintOrSavePosterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectedFilmForms\ShowFeedBackFirmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectedFilmForms\ShowFeedBackFirmForm.Designer.cs">
+      <DependentUpon>ShowFeedBackFirmForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Base\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectedFilmForms\PrintOrSavePosterForm.resx">
+      <DependentUpon>PrintOrSavePosterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectedFilmForms\ShowFeedBackFirmForm.resx">
+      <DependentUpon>ShowFeedBackFirmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
