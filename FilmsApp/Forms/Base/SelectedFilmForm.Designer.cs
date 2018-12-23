@@ -28,14 +28,14 @@ namespace FilmsApp.Forms.Base
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vMoviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movieDBDataSet = new FilmsApp.MovieDBDataSet();
-            this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonShowSelectedFilm = new System.Windows.Forms.Button();
             this.buttonFilmAdd = new System.Windows.Forms.Button();
             this.buttonShowMovie = new System.Windows.Forms.Button();
             this.buttonSelectFilther = new System.Windows.Forms.Button();
+            this.vMoviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movieDBDataSet = new FilmsApp.MovieDBDataSet();
+            this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
             this.PosterImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.FilmIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posterData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +48,9 @@ namespace FilmsApp.Forms.Base
             this.режиссёрDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.рейтинг10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -103,20 +103,6 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
-            // vMoviesBindingSource
-            // 
-            this.vMoviesBindingSource.DataMember = "vMovies";
-            this.vMoviesBindingSource.DataSource = this.movieDBDataSet;
-            // 
-            // movieDBDataSet
-            // 
-            this.movieDBDataSet.DataSetName = "MovieDBDataSet";
-            this.movieDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vMoviesTableAdapter
-            // 
-            this.vMoviesTableAdapter.ClearBeforeFill = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonShowSelectedFilm);
@@ -167,6 +153,20 @@ namespace FilmsApp.Forms.Base
             this.buttonSelectFilther.Text = "Фильтр";
             this.buttonSelectFilther.UseVisualStyleBackColor = true;
             this.buttonSelectFilther.Click += new System.EventHandler(this.buttonSelectFilther_Click);
+            // 
+            // vMoviesBindingSource
+            // 
+            this.vMoviesBindingSource.DataMember = "vMovies";
+            this.vMoviesBindingSource.DataSource = this.movieDBDataSet;
+            // 
+            // movieDBDataSet
+            // 
+            this.movieDBDataSet.DataSetName = "MovieDBDataSet";
+            this.movieDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vMoviesTableAdapter
+            // 
+            this.vMoviesTableAdapter.ClearBeforeFill = true;
             // 
             // PosterImage
             // 
@@ -277,9 +277,9 @@ namespace FilmsApp.Forms.Base
             this.Name = "SelectedFilmForm";
             this.Load += new System.EventHandler(this.SelectedFilmForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

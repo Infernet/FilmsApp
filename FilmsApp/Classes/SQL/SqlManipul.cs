@@ -22,7 +22,7 @@ namespace FilmsApp.Classes.SQL
 
         public int CurrentFilmId { get; set; }
 
-
+        public MovieDBDataSet DataSetMovies;
 
         private static SqlManipul instance;
         private SqlManipul() {
@@ -54,32 +54,40 @@ namespace FilmsApp.Classes.SQL
                 //фильтрация по жанру
                 if (GenreFilterId != -1)
                 {
-                    SqlParameter pGenre = new SqlParameter("@genre", System.Data.SqlDbType.Int);
-                    pGenre.Value = GenreFilterId;
+                    SqlParameter pGenre = new SqlParameter("@genre", System.Data.SqlDbType.Int)
+                    {
+                        Value = GenreFilterId
+                    };
                     command.Parameters.Add(pGenre);
                     commandFilter += @"inner join dbo.MovieOnGenre on dbo.Movie.MovieId=dbo.MovieOnGenre.MovieId and dbo.MovieOnGenre.GenreId=@genre ";
                 }
                 //фильтрация по стране
                 if (CountryFilterId != -1)
                 {
-                    SqlParameter pCountry = new SqlParameter("@country", System.Data.SqlDbType.Int);
-                    pCountry.Value = CountryFilterId;
+                    SqlParameter pCountry = new SqlParameter("@country", System.Data.SqlDbType.Int)
+                    {
+                        Value = CountryFilterId
+                    };
                     command.Parameters.Add(pCountry);
                     commandFilter += @"inner join dbo.MovieOnCountry on dbo.Movie.MovieId=dbo.MovieOnCountry.MovieId and dbo.MovieOnCountry.CountryId=@country ";
                 }
                 //фильтрация по языку
                 if (LanguageFilterId != -1)
                 {
-                    SqlParameter pLanguage = new SqlParameter("@language", System.Data.SqlDbType.Int);
-                    pLanguage.Value = LanguageFilterId;
+                    SqlParameter pLanguage = new SqlParameter("@language", System.Data.SqlDbType.Int)
+                    {
+                        Value = LanguageFilterId
+                    };
                     command.Parameters.Add(pLanguage);
                     commandFilter += @"inner join dbo.LanguageInMovie on dbo.Movie.MovieId=dbo.LanguageInMovie.MovieId and dbo.LanguageInMovie.LanguageId=@language ";
                 }
                 //фильтрация по режессёру
                 if (DirectorFilterId != -1)
                 {
-                    SqlParameter pDirector = new SqlParameter("@director", System.Data.SqlDbType.Int);
-                    pDirector.Value = DirectorFilterId;
+                    SqlParameter pDirector = new SqlParameter("@director", System.Data.SqlDbType.Int)
+                    {
+                        Value = DirectorFilterId
+                    };
                     command.Parameters.Add(pDirector);
                     commandFilter += @"inner join dbo.vDirectorsInMovieTable on dbo.vDirectorsInMovieTable.MovieId=dbo.Movie.MovieId and dbo.vDirectorsInMovieTable.PersonId=@director ";
                 }
@@ -90,8 +98,10 @@ namespace FilmsApp.Classes.SQL
                     bool flag = false;
                     if (RatedFilterId != -1)
                     {
-                        SqlParameter pRated = new SqlParameter("@rated", System.Data.SqlDbType.Int);
-                        pRated.Value = RatedFilterId;
+                        SqlParameter pRated = new SqlParameter("@rated", System.Data.SqlDbType.Int)
+                        {
+                            Value = RatedFilterId
+                        };
                         command.Parameters.Add(pRated);
                         commandFilter += @"dbo.Movie.RatedId=@rated";
                         flag = true;
@@ -100,8 +110,10 @@ namespace FilmsApp.Classes.SQL
                     {
                         if (flag)
                             commandFilter += " and ";
-                        SqlParameter pYear = new SqlParameter("@year", System.Data.SqlDbType.Int);
-                        pYear.Value = YearFilterVal;
+                        SqlParameter pYear = new SqlParameter("@year", System.Data.SqlDbType.Int)
+                        {
+                            Value = YearFilterVal
+                        };
                         command.Parameters.Add(pYear);
                         commandFilter += @"year(dbo.Movie.Released)=@year";
                     }
@@ -132,6 +144,7 @@ namespace FilmsApp.Classes.SQL
             DirectorFilterId = -1;
             LanguageFilterId = -1;
             RatedFilterId = -1;
+            CurrentFilmId = -1;
         }
     }
 }

@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.vMovies" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность (мин)], Жанр, Страна, Режиссёр, [Рейтинг /10] FROM dbo.vMovies</CommandText>
+                    <CommandText>SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность (мин)], Жанр, Страна, Режиссёр, [Рейтинг /10], [IMDB Votes], [IMDB rated], MetaScore, [Актёрский состав], Год, [Дата выхода], [Дата выхода на DVD], [Кассовые сборы], Награды, Сайт, Сценарий, [Возрастной рейтинг], Описание, Производство FROM vMovies</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -29,6 +29,20 @@
               <Mapping SourceColumn="Страна" DataSetColumn="Страна" />
               <Mapping SourceColumn="Режиссёр" DataSetColumn="Режиссёр" />
               <Mapping SourceColumn="Рейтинг /10" DataSetColumn="Рейтинг /10" />
+              <Mapping SourceColumn="Год" DataSetColumn="Год" />
+              <Mapping SourceColumn="Дата выхода" DataSetColumn="Дата выхода" />
+              <Mapping SourceColumn="MetaScore" DataSetColumn="MetaScore" />
+              <Mapping SourceColumn="IMDB rated" DataSetColumn="IMDB rated" />
+              <Mapping SourceColumn="IMDB Votes" DataSetColumn="IMDB Votes" />
+              <Mapping SourceColumn="Кассовые сборы" DataSetColumn="Кассовые сборы" />
+              <Mapping SourceColumn="Дата выхода на DVD" DataSetColumn="Дата выхода на DVD" />
+              <Mapping SourceColumn="Сайт" DataSetColumn="Сайт" />
+              <Mapping SourceColumn="Награды" DataSetColumn="Награды" />
+              <Mapping SourceColumn="Актёрский состав" DataSetColumn="Актёрский состав" />
+              <Mapping SourceColumn="Сценарий" DataSetColumn="Сценарий" />
+              <Mapping SourceColumn="Возрастной рейтинг" DataSetColumn="Возрастной рейтинг" />
+              <Mapping SourceColumn="Описание" DataSetColumn="Описание" />
+              <Mapping SourceColumn="Производство" DataSetColumn="Производство" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -40,7 +54,7 @@
   <xs:element name="MovieDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MovieDBDataSet" msprop:Generator_UserDSName="MovieDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vMovies" msprop:Generator_TableClassName="vMoviesDataTable" msprop:Generator_TableVarName="tablevMovies" msprop:Generator_TablePropName="vMovies" msprop:Generator_RowDeletingName="vMoviesRowDeleting" msprop:Generator_RowChangingName="vMoviesRowChanging" msprop:Generator_RowEvHandlerName="vMoviesRowChangeEventHandler" msprop:Generator_RowDeletedName="vMoviesRowDeleted" msprop:Generator_UserTableName="vMovies" msprop:Generator_RowChangedName="vMoviesRowChanged" msprop:Generator_RowEvArgName="vMoviesRowChangeEvent" msprop:Generator_RowClassName="vMoviesRow">
+        <xs:element name="vMovies" msprop:Generator_TableClassName="vMoviesDataTable" msprop:Generator_TableVarName="tablevMovies" msprop:Generator_RowChangedName="vMoviesRowChanged" msprop:Generator_TablePropName="vMovies" msprop:Generator_RowDeletingName="vMoviesRowDeleting" msprop:Generator_RowChangingName="vMoviesRowChanging" msprop:Generator_RowEvHandlerName="vMoviesRowChangeEventHandler" msprop:Generator_RowDeletedName="vMoviesRowDeleted" msprop:Generator_RowClassName="vMoviesRow" msprop:Generator_UserTableName="vMovies" msprop:Generator_RowEvArgName="vMoviesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -89,6 +103,62 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Рейтинг_x0020__x002F_10" msprop:Generator_ColumnVarNameInTable="_columnРейтинг__10" msprop:Generator_ColumnPropNameInRow="_Рейтинг__10" msprop:Generator_ColumnPropNameInTable="_Рейтинг__10Column" msprop:Generator_UserColumnName="Рейтинг /10" type="xs:double" />
+              <xs:element name="Год" msprop:Generator_ColumnVarNameInTable="columnГод" msprop:Generator_ColumnPropNameInRow="Год" msprop:Generator_ColumnPropNameInTable="ГодColumn" msprop:Generator_UserColumnName="Год" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата_x0020_выхода" msprop:Generator_ColumnVarNameInTable="columnДата_выхода" msprop:Generator_ColumnPropNameInRow="Дата_выхода" msprop:Generator_ColumnPropNameInTable="Дата_выходаColumn" msprop:Generator_UserColumnName="Дата выхода" type="xs:dateTime" />
+              <xs:element name="MetaScore" msprop:Generator_ColumnVarNameInTable="columnMetaScore" msprop:Generator_ColumnPropNameInRow="MetaScore" msprop:Generator_ColumnPropNameInTable="MetaScoreColumn" msprop:Generator_UserColumnName="MetaScore" type="xs:int" minOccurs="0" />
+              <xs:element name="IMDB_x0020_rated" msprop:Generator_ColumnVarNameInTable="columnIMDB_rated" msprop:Generator_ColumnPropNameInRow="IMDB_rated" msprop:Generator_ColumnPropNameInTable="IMDB_ratedColumn" msprop:Generator_UserColumnName="IMDB rated" type="xs:double" />
+              <xs:element name="IMDB_x0020_Votes" msprop:Generator_ColumnVarNameInTable="columnIMDB_Votes" msprop:Generator_ColumnPropNameInRow="IMDB_Votes" msprop:Generator_ColumnPropNameInTable="IMDB_VotesColumn" msprop:Generator_UserColumnName="IMDB Votes" type="xs:int" />
+              <xs:element name="Кассовые_x0020_сборы" msprop:Generator_ColumnVarNameInTable="columnКассовые_сборы" msprop:Generator_ColumnPropNameInRow="Кассовые_сборы" msprop:Generator_ColumnPropNameInTable="Кассовые_сборыColumn" msprop:Generator_UserColumnName="Кассовые сборы" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата_x0020_выхода_x0020_на_x0020_DVD" msprop:Generator_ColumnVarNameInTable="columnДата_выхода_на_DVD" msprop:Generator_ColumnPropNameInRow="Дата_выхода_на_DVD" msprop:Generator_ColumnPropNameInTable="Дата_выхода_на_DVDColumn" msprop:Generator_UserColumnName="Дата выхода на DVD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Сайт" msprop:Generator_ColumnVarNameInTable="columnСайт" msprop:Generator_ColumnPropNameInRow="Сайт" msprop:Generator_ColumnPropNameInTable="СайтColumn" msprop:Generator_UserColumnName="Сайт" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Награды" msprop:Generator_ColumnVarNameInTable="columnНаграды" msprop:Generator_ColumnPropNameInRow="Награды" msprop:Generator_ColumnPropNameInTable="НаградыColumn" msprop:Generator_UserColumnName="Награды" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Актёрский_x0020_состав" msprop:Generator_ColumnVarNameInTable="columnАктёрский_состав" msprop:Generator_ColumnPropNameInRow="Актёрский_состав" msprop:Generator_ColumnPropNameInTable="Актёрский_составColumn" msprop:Generator_UserColumnName="Актёрский состав" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Сценарий" msprop:Generator_ColumnVarNameInTable="columnСценарий" msprop:Generator_ColumnPropNameInRow="Сценарий" msprop:Generator_ColumnPropNameInTable="СценарийColumn" msprop:Generator_UserColumnName="Сценарий" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Возрастной_x0020_рейтинг" msprop:Generator_ColumnVarNameInTable="columnВозрастной_рейтинг" msprop:Generator_ColumnPropNameInRow="Возрастной_рейтинг" msprop:Generator_ColumnPropNameInTable="Возрастной_рейтингColumn" msprop:Generator_UserColumnName="Возрастной рейтинг">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Описание" msprop:Generator_ColumnVarNameInTable="columnОписание" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_UserColumnName="Описание">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Производство" msprop:Generator_ColumnVarNameInTable="columnПроизводство" msprop:Generator_ColumnPropNameInRow="Производство" msprop:Generator_ColumnPropNameInTable="ПроизводствоColumn" msprop:Generator_UserColumnName="Производство" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

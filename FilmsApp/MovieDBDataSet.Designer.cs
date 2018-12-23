@@ -299,6 +299,34 @@ namespace FilmsApp {
             
             private global::System.Data.DataColumn _columnРейтинг__10;
             
+            private global::System.Data.DataColumn columnГод;
+            
+            private global::System.Data.DataColumn columnДата_выхода;
+            
+            private global::System.Data.DataColumn columnMetaScore;
+            
+            private global::System.Data.DataColumn columnIMDB_rated;
+            
+            private global::System.Data.DataColumn columnIMDB_Votes;
+            
+            private global::System.Data.DataColumn columnКассовые_сборы;
+            
+            private global::System.Data.DataColumn columnДата_выхода_на_DVD;
+            
+            private global::System.Data.DataColumn columnСайт;
+            
+            private global::System.Data.DataColumn columnНаграды;
+            
+            private global::System.Data.DataColumn columnАктёрский_состав;
+            
+            private global::System.Data.DataColumn columnСценарий;
+            
+            private global::System.Data.DataColumn columnВозрастной_рейтинг;
+            
+            private global::System.Data.DataColumn columnОписание;
+            
+            private global::System.Data.DataColumn columnПроизводство;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vMoviesDataTable() {
@@ -414,6 +442,118 @@ namespace FilmsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ГодColumn {
+                get {
+                    return this.columnГод;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Дата_выходаColumn {
+                get {
+                    return this.columnДата_выхода;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MetaScoreColumn {
+                get {
+                    return this.columnMetaScore;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IMDB_ratedColumn {
+                get {
+                    return this.columnIMDB_rated;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IMDB_VotesColumn {
+                get {
+                    return this.columnIMDB_Votes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Кассовые_сборыColumn {
+                get {
+                    return this.columnКассовые_сборы;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Дата_выхода_на_DVDColumn {
+                get {
+                    return this.columnДата_выхода_на_DVD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn СайтColumn {
+                get {
+                    return this.columnСайт;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn НаградыColumn {
+                get {
+                    return this.columnНаграды;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Актёрский_составColumn {
+                get {
+                    return this.columnАктёрский_состав;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn СценарийColumn {
+                get {
+                    return this.columnСценарий;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Возрастной_рейтингColumn {
+                get {
+                    return this.columnВозрастной_рейтинг;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ОписаниеColumn {
+                get {
+                    return this.columnОписание;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ПроизводствоColumn {
+                get {
+                    return this.columnПроизводство;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +589,31 @@ namespace FilmsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vMoviesRow AddvMoviesRow(int ID, string Poster, string Название, int Год_выхода, string Язык, int _Длительность__мин_, string Жанр, string Страна, string Режиссёр, double _Рейтинг__10) {
+            public vMoviesRow AddvMoviesRow(
+                        int ID, 
+                        string Poster, 
+                        string Название, 
+                        int Год_выхода, 
+                        string Язык, 
+                        int _Длительность__мин_, 
+                        string Жанр, 
+                        string Страна, 
+                        string Режиссёр, 
+                        double _Рейтинг__10, 
+                        int Год, 
+                        System.DateTime Дата_выхода, 
+                        int MetaScore, 
+                        double IMDB_rated, 
+                        int IMDB_Votes, 
+                        int Кассовые_сборы, 
+                        System.DateTime Дата_выхода_на_DVD, 
+                        string Сайт, 
+                        string Награды, 
+                        string Актёрский_состав, 
+                        string Сценарий, 
+                        string Возрастной_рейтинг, 
+                        string Описание, 
+                        string Производство) {
                 vMoviesRow rowvMoviesRow = ((vMoviesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -461,7 +625,21 @@ namespace FilmsApp {
                         Жанр,
                         Страна,
                         Режиссёр,
-                        _Рейтинг__10};
+                        _Рейтинг__10,
+                        Год,
+                        Дата_выхода,
+                        MetaScore,
+                        IMDB_rated,
+                        IMDB_Votes,
+                        Кассовые_сборы,
+                        Дата_выхода_на_DVD,
+                        Сайт,
+                        Награды,
+                        Актёрский_состав,
+                        Сценарий,
+                        Возрастной_рейтинг,
+                        Описание,
+                        Производство};
                 rowvMoviesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvMoviesRow);
                 return rowvMoviesRow;
@@ -501,6 +679,20 @@ namespace FilmsApp {
                 this.columnСтрана = base.Columns["Страна"];
                 this.columnРежиссёр = base.Columns["Режиссёр"];
                 this._columnРейтинг__10 = base.Columns["Рейтинг /10"];
+                this.columnГод = base.Columns["Год"];
+                this.columnДата_выхода = base.Columns["Дата выхода"];
+                this.columnMetaScore = base.Columns["MetaScore"];
+                this.columnIMDB_rated = base.Columns["IMDB rated"];
+                this.columnIMDB_Votes = base.Columns["IMDB Votes"];
+                this.columnКассовые_сборы = base.Columns["Кассовые сборы"];
+                this.columnДата_выхода_на_DVD = base.Columns["Дата выхода на DVD"];
+                this.columnСайт = base.Columns["Сайт"];
+                this.columnНаграды = base.Columns["Награды"];
+                this.columnАктёрский_состав = base.Columns["Актёрский состав"];
+                this.columnСценарий = base.Columns["Сценарий"];
+                this.columnВозрастной_рейтинг = base.Columns["Возрастной рейтинг"];
+                this.columnОписание = base.Columns["Описание"];
+                this.columnПроизводство = base.Columns["Производство"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -530,6 +722,34 @@ namespace FilmsApp {
                 this._columnРейтинг__10.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnРейтинг__10");
                 this._columnРейтинг__10.ExtendedProperties.Add("Generator_UserColumnName", "Рейтинг /10");
                 base.Columns.Add(this._columnРейтинг__10);
+                this.columnГод = new global::System.Data.DataColumn("Год", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnГод);
+                this.columnДата_выхода = new global::System.Data.DataColumn("Дата выхода", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_выхода);
+                this.columnMetaScore = new global::System.Data.DataColumn("MetaScore", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMetaScore);
+                this.columnIMDB_rated = new global::System.Data.DataColumn("IMDB rated", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIMDB_rated);
+                this.columnIMDB_Votes = new global::System.Data.DataColumn("IMDB Votes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIMDB_Votes);
+                this.columnКассовые_сборы = new global::System.Data.DataColumn("Кассовые сборы", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКассовые_сборы);
+                this.columnДата_выхода_на_DVD = new global::System.Data.DataColumn("Дата выхода на DVD", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_выхода_на_DVD);
+                this.columnСайт = new global::System.Data.DataColumn("Сайт", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСайт);
+                this.columnНаграды = new global::System.Data.DataColumn("Награды", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНаграды);
+                this.columnАктёрский_состав = new global::System.Data.DataColumn("Актёрский состав", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnАктёрский_состав);
+                this.columnСценарий = new global::System.Data.DataColumn("Сценарий", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСценарий);
+                this.columnВозрастной_рейтинг = new global::System.Data.DataColumn("Возрастной рейтинг", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВозрастной_рейтинг);
+                this.columnОписание = new global::System.Data.DataColumn("Описание", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОписание);
+                this.columnПроизводство = new global::System.Data.DataColumn("Производство", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПроизводство);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -545,6 +765,18 @@ namespace FilmsApp {
                 this.columnСтрана.MaxLength = 4000;
                 this.columnРежиссёр.MaxLength = 4000;
                 this._columnРейтинг__10.AllowDBNull = false;
+                this.columnДата_выхода.AllowDBNull = false;
+                this.columnIMDB_rated.AllowDBNull = false;
+                this.columnIMDB_Votes.AllowDBNull = false;
+                this.columnСайт.MaxLength = 100;
+                this.columnНаграды.MaxLength = 100;
+                this.columnАктёрский_состав.MaxLength = 4000;
+                this.columnСценарий.MaxLength = 4000;
+                this.columnВозрастной_рейтинг.AllowDBNull = false;
+                this.columnВозрастной_рейтинг.MaxLength = 30;
+                this.columnОписание.AllowDBNull = false;
+                this.columnОписание.MaxLength = 500;
+                this.columnПроизводство.MaxLength = 4000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -822,6 +1054,205 @@ namespace FilmsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Год {
+                get {
+                    try {
+                        return ((int)(this[this.tablevMovies.ГодColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Год\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.ГодColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Дата_выхода {
+                get {
+                    return ((global::System.DateTime)(this[this.tablevMovies.Дата_выходаColumn]));
+                }
+                set {
+                    this[this.tablevMovies.Дата_выходаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int MetaScore {
+                get {
+                    try {
+                        return ((int)(this[this.tablevMovies.MetaScoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'MetaScore\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.MetaScoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double IMDB_rated {
+                get {
+                    return ((double)(this[this.tablevMovies.IMDB_ratedColumn]));
+                }
+                set {
+                    this[this.tablevMovies.IMDB_ratedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IMDB_Votes {
+                get {
+                    return ((int)(this[this.tablevMovies.IMDB_VotesColumn]));
+                }
+                set {
+                    this[this.tablevMovies.IMDB_VotesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Кассовые_сборы {
+                get {
+                    try {
+                        return ((int)(this[this.tablevMovies.Кассовые_сборыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Кассовые сборы\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.Кассовые_сборыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Дата_выхода_на_DVD {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevMovies.Дата_выхода_на_DVDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата выхода на DVD\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.Дата_выхода_на_DVDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Сайт {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMovies.СайтColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Сайт\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.СайтColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Награды {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMovies.НаградыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Награды\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.НаградыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Актёрский_состав {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMovies.Актёрский_составColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Актёрский состав\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.Актёрский_составColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Сценарий {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMovies.СценарийColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Сценарий\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.СценарийColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Возрастной_рейтинг {
+                get {
+                    return ((string)(this[this.tablevMovies.Возрастной_рейтингColumn]));
+                }
+                set {
+                    this[this.tablevMovies.Возрастной_рейтингColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Описание {
+                get {
+                    return ((string)(this[this.tablevMovies.ОписаниеColumn]));
+                }
+                set {
+                    this[this.tablevMovies.ОписаниеColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Производство {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMovies.ПроизводствоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Производство\' в таблице \'vMovies\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMovies.ПроизводствоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsГод_выходаNull() {
                 return this.IsNull(this.tablevMovies.Год_выходаColumn);
             }
@@ -878,6 +1309,114 @@ namespace FilmsApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetРежиссёрNull() {
                 this[this.tablevMovies.РежиссёрColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsГодNull() {
+                return this.IsNull(this.tablevMovies.ГодColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetГодNull() {
+                this[this.tablevMovies.ГодColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMetaScoreNull() {
+                return this.IsNull(this.tablevMovies.MetaScoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMetaScoreNull() {
+                this[this.tablevMovies.MetaScoreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsКассовые_сборыNull() {
+                return this.IsNull(this.tablevMovies.Кассовые_сборыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetКассовые_сборыNull() {
+                this[this.tablevMovies.Кассовые_сборыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsДата_выхода_на_DVDNull() {
+                return this.IsNull(this.tablevMovies.Дата_выхода_на_DVDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetДата_выхода_на_DVDNull() {
+                this[this.tablevMovies.Дата_выхода_на_DVDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsСайтNull() {
+                return this.IsNull(this.tablevMovies.СайтColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetСайтNull() {
+                this[this.tablevMovies.СайтColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsНаградыNull() {
+                return this.IsNull(this.tablevMovies.НаградыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetНаградыNull() {
+                this[this.tablevMovies.НаградыColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsАктёрский_составNull() {
+                return this.IsNull(this.tablevMovies.Актёрский_составColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetАктёрский_составNull() {
+                this[this.tablevMovies.Актёрский_составColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsСценарийNull() {
+                return this.IsNull(this.tablevMovies.СценарийColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetСценарийNull() {
+                this[this.tablevMovies.СценарийColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsПроизводствоNull() {
+                return this.IsNull(this.tablevMovies.ПроизводствоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetПроизводствоNull() {
+                this[this.tablevMovies.ПроизводствоColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1050,6 +1589,20 @@ namespace FilmsApp.MovieDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Страна", "Страна");
             tableMapping.ColumnMappings.Add("Режиссёр", "Режиссёр");
             tableMapping.ColumnMappings.Add("Рейтинг /10", "Рейтинг /10");
+            tableMapping.ColumnMappings.Add("Год", "Год");
+            tableMapping.ColumnMappings.Add("Дата выхода", "Дата выхода");
+            tableMapping.ColumnMappings.Add("MetaScore", "MetaScore");
+            tableMapping.ColumnMappings.Add("IMDB rated", "IMDB rated");
+            tableMapping.ColumnMappings.Add("IMDB Votes", "IMDB Votes");
+            tableMapping.ColumnMappings.Add("Кассовые сборы", "Кассовые сборы");
+            tableMapping.ColumnMappings.Add("Дата выхода на DVD", "Дата выхода на DVD");
+            tableMapping.ColumnMappings.Add("Сайт", "Сайт");
+            tableMapping.ColumnMappings.Add("Награды", "Награды");
+            tableMapping.ColumnMappings.Add("Актёрский состав", "Актёрский состав");
+            tableMapping.ColumnMappings.Add("Сценарий", "Сценарий");
+            tableMapping.ColumnMappings.Add("Возрастной рейтинг", "Возрастной рейтинг");
+            tableMapping.ColumnMappings.Add("Описание", "Описание");
+            tableMapping.ColumnMappings.Add("Производство", "Производство");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1066,8 +1619,7 @@ namespace FilmsApp.MovieDBDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность (мин)], Жанр, Стра" +
-                "на, Режиссёр, [Рейтинг /10] FROM dbo.vMovies";
+            this._commandCollection[0].CommandText = @"SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность (мин)], Жанр, Страна, Режиссёр, [Рейтинг /10], [IMDB Votes], [IMDB rated], MetaScore, [Актёрский состав], Год, [Дата выхода], [Дата выхода на DVD], [Кассовые сборы], Награды, Сайт, Сценарий, [Возрастной рейтинг], Описание, Производство FROM vMovies";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

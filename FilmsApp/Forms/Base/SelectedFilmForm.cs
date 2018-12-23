@@ -18,6 +18,7 @@ namespace FilmsApp.Forms.Base
         {
             InitializeComponent();
             dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            SqlManipul.GetInstance().DataSetMovies = movieDBDataSet;
         }
 
         private void SelectedFilmForm_Load_1(object sender, EventArgs e)
@@ -66,7 +67,8 @@ namespace FilmsApp.Forms.Base
 
         private void buttonShowSelectedFilm_Click(object sender, EventArgs e)
         {
-            ShowNextForm(new ShowFilmForm(ref vMoviesTableAdapter), false);
+            if(SqlManipul.GetInstance().CurrentFilmId!=-1)
+            ShowNextForm(new ShowFilmForm(), false);
             
         }
 
