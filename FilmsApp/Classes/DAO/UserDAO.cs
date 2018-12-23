@@ -12,7 +12,7 @@ namespace FilmsApp.Classes.DAO
 {
     class UserDAO
     {
-        public string Role { get; private set; }
+        public string Role { get;set; }
 
         private static UserDAO instance;
         private UserDAO() { }

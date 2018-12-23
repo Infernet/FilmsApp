@@ -16,13 +16,11 @@ namespace FilmsApp.Forms.Base
     {
         private DataSet dataFilters = new DataSet("FilterDataSet");
 
-        
+
 
         public MovieFilterForm()
         {
             InitializeComponent();
-            //обнуление фильтра
-            SqlManipul.GetInstance().FilterReset();
             //заполнение comboBox данными по фильтрам из БД
             using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
             {
@@ -76,6 +74,38 @@ namespace FilmsApp.Forms.Base
             comboRated.DataSource = dataFilters.Tables[4];
             comboRated.DisplayMember = "RatedName";
             comboRated.ValueMember = "RatedId";
+
+            //восстановление фильтра по его текущему состоянию
+            if (SqlManipul.GetInstance().GenreFilterId != -1)
+            {
+                checkEnableGenre.Checked = true;
+                comboGenre.SelectedValue = SqlManipul.GetInstance().GenreFilterId;
+            }
+            if (SqlManipul.GetInstance().CountryFilterId != -1)
+            {
+                checkEnableCountry.Checked = true;
+                comboCountry.SelectedValue = SqlManipul.GetInstance().CountryFilterId;
+            }
+            if (SqlManipul.GetInstance().DirectorFilterId != -1)
+            {
+                checkEnableDirector.Checked = true;
+                comboDirector.SelectedValue = SqlManipul.GetInstance().DirectorFilterId;
+            }
+            if (SqlManipul.GetInstance().LanguageFilterId != -1)
+            {
+                checkEnableLanguage.Checked = true;
+                comboLanguage.SelectedValue = SqlManipul.GetInstance().LanguageFilterId;
+            }
+            if (SqlManipul.GetInstance().RatedFilterId != -1)
+            {
+                checkEnableRated.Checked = true;
+                comboRated.SelectedValue = SqlManipul.GetInstance().RatedFilterId;
+            }
+            if (SqlManipul.GetInstance().YearFilterVal != -1)
+            {
+                checkEnableYear.Checked = true;
+                numericYear.Value = SqlManipul.GetInstance().YearFilterVal;
+            }
         }
 
 
@@ -137,20 +167,17 @@ namespace FilmsApp.Forms.Base
         {
             //проверка выбранных пунктов фильтров
             //жанр
-            if (checkEnableGenre.Checked)
-                SqlManipul.GetInstance().GenreFilterId = (int)comboGenre.SelectedValue;
+            SqlManipul.GetInstance().GenreFilterId = (checkEnableGenre.Checked) ? (int)comboGenre.SelectedValue : -1;
             //страна
-            if (checkEnableCountry.Checked)
-                SqlManipul.GetInstance().CountryFilterId =(int)comboCountry.SelectedValue;
+            SqlManipul.GetInstance().CountryFilterId = (checkEnableCountry.Checked) ? (int)comboCountry.SelectedValue : -1;
+            //режиссёр
+            SqlManipul.GetInstance().DirectorFilterId = (checkEnableDirector.Checked) ? (int)comboDirector.SelectedValue : -1;
             //язык
-            if (checkEnableLanguage.Checked)
-                SqlManipul.GetInstance().LanguageFilterId = (int)comboLanguage.SelectedValue;
+            SqlManipul.GetInstance().LanguageFilterId = (checkEnableLanguage.Checked) ? (int)comboLanguage.SelectedValue : -1;
             //возрастной рейтинг
-            if (checkEnableRated.Checked)
-                SqlManipul.GetInstance().RatedFilterId = (int)comboRated.SelectedValue;
+            SqlManipul.GetInstance().RatedFilterId = (checkEnableRated.Checked) ? (int)comboRated.SelectedValue : -1;
             //год выхода
-            if (checkEnableYear.Checked)
-                SqlManipul.GetInstance().YearFilterVal = (int)numericYear.Value;
+            SqlManipul.GetInstance().YearFilterVal = (checkEnableYear.Checked) ? (int)numericYear.Value : -1;
             this.DialogResult = DialogResult.Yes;
         }
     }

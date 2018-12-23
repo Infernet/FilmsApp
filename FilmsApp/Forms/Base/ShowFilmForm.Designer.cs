@@ -50,13 +50,10 @@
             this.lMetascore = new System.Windows.Forms.Label();
             this.lImdbRating = new System.Windows.Forms.Label();
             this.tableLP_info = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picturePoster)).BeginInit();
             this.tableLP_info.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // lTitle
@@ -83,7 +80,7 @@
             this.picturePoster.Location = new System.Drawing.Point(5, 22);
             this.picturePoster.Name = "picturePoster";
             this.tableLP_info.SetRowSpan(this.picturePoster, 2);
-            this.picturePoster.Size = new System.Drawing.Size(318, 193);
+            this.picturePoster.Size = new System.Drawing.Size(297, 193);
             this.picturePoster.TabIndex = 1;
             this.picturePoster.TabStop = false;
             // 
@@ -92,9 +89,9 @@
             this.lYear.AutoSize = true;
             this.lYear.BackColor = System.Drawing.Color.Gainsboro;
             this.lYear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lYear.Location = new System.Drawing.Point(331, 137);
+            this.lYear.Location = new System.Drawing.Point(310, 49);
             this.lYear.Name = "lYear";
-            this.lYear.Size = new System.Drawing.Size(125, 81);
+            this.lYear.Size = new System.Drawing.Size(134, 169);
             this.lYear.TabIndex = 2;
             this.lYear.Text = "Год :";
             this.lYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -107,7 +104,7 @@
             this.lRuntime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lRuntime.Location = new System.Drawing.Point(5, 220);
             this.lRuntime.Name = "lRuntime";
-            this.lRuntime.Size = new System.Drawing.Size(123, 28);
+            this.lRuntime.Size = new System.Drawing.Size(114, 28);
             this.lRuntime.TabIndex = 6;
             this.lRuntime.Text = "Длительность :";
             this.lRuntime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -119,7 +116,7 @@
             this.lDateReleased.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lDateReleased.Location = new System.Drawing.Point(5, 250);
             this.lDateReleased.Name = "lDateReleased";
-            this.lDateReleased.Size = new System.Drawing.Size(123, 34);
+            this.lDateReleased.Size = new System.Drawing.Size(114, 34);
             this.lDateReleased.TabIndex = 5;
             this.lDateReleased.Text = "Дата выхода :";
             this.lDateReleased.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -129,9 +126,9 @@
             this.lGenre.AutoSize = true;
             this.lGenre.BackColor = System.Drawing.Color.Gainsboro;
             this.lGenre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lGenre.Location = new System.Drawing.Point(331, 286);
+            this.lGenre.Location = new System.Drawing.Point(310, 286);
             this.lGenre.Name = "lGenre";
-            this.lGenre.Size = new System.Drawing.Size(125, 56);
+            this.lGenre.Size = new System.Drawing.Size(134, 56);
             this.lGenre.TabIndex = 7;
             this.lGenre.Text = "Жанр :";
             this.lGenre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -141,9 +138,9 @@
             this.lCountry.AutoSize = true;
             this.lCountry.BackColor = System.Drawing.Color.Gainsboro;
             this.lCountry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lCountry.Location = new System.Drawing.Point(331, 488);
+            this.lCountry.Location = new System.Drawing.Point(310, 488);
             this.lCountry.Name = "lCountry";
-            this.lCountry.Size = new System.Drawing.Size(125, 53);
+            this.lCountry.Size = new System.Drawing.Size(134, 53);
             this.lCountry.TabIndex = 8;
             this.lCountry.Text = "Страна :";
             this.lCountry.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -155,7 +152,7 @@
             this.lDirector.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lDirector.Location = new System.Drawing.Point(5, 286);
             this.lDirector.Name = "lDirector";
-            this.lDirector.Size = new System.Drawing.Size(123, 56);
+            this.lDirector.Size = new System.Drawing.Size(114, 56);
             this.lDirector.TabIndex = 9;
             this.lDirector.Text = "Режиссёр :";
             this.lDirector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -165,9 +162,9 @@
             this.lRated.AutoSize = true;
             this.lRated.BackColor = System.Drawing.Color.Gainsboro;
             this.lRated.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lRated.Location = new System.Drawing.Point(331, 220);
+            this.lRated.Location = new System.Drawing.Point(310, 220);
             this.lRated.Name = "lRated";
-            this.lRated.Size = new System.Drawing.Size(125, 28);
+            this.lRated.Size = new System.Drawing.Size(134, 28);
             this.lRated.TabIndex = 10;
             this.lRated.Text = "Возрастной рейтинг :";
             this.lRated.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -177,9 +174,9 @@
             this.lRating.AutoSize = true;
             this.lRating.BackColor = System.Drawing.Color.Gainsboro;
             this.lRating.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lRating.Location = new System.Drawing.Point(331, 19);
+            this.lRating.Location = new System.Drawing.Point(310, 19);
             this.lRating.Name = "lRating";
-            this.lRating.Size = new System.Drawing.Size(125, 116);
+            this.lRating.Size = new System.Drawing.Size(134, 28);
             this.lRating.TabIndex = 11;
             this.lRating.Text = "Рейтинг :";
             this.lRating.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -191,7 +188,7 @@
             this.lPlot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lPlot.Location = new System.Drawing.Point(5, 344);
             this.lPlot.Name = "lPlot";
-            this.lPlot.Size = new System.Drawing.Size(123, 142);
+            this.lPlot.Size = new System.Drawing.Size(114, 142);
             this.lPlot.TabIndex = 12;
             this.lPlot.Text = "Описание :";
             this.lPlot.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -203,7 +200,7 @@
             this.lAwards.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lAwards.Location = new System.Drawing.Point(5, 642);
             this.lAwards.Name = "lAwards";
-            this.lAwards.Size = new System.Drawing.Size(123, 44);
+            this.lAwards.Size = new System.Drawing.Size(114, 44);
             this.lAwards.TabIndex = 13;
             this.lAwards.Text = "Награды :";
             this.lAwards.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -213,9 +210,9 @@
             this.lActors.AutoSize = true;
             this.lActors.BackColor = System.Drawing.Color.Gainsboro;
             this.lActors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lActors.Location = new System.Drawing.Point(331, 543);
+            this.lActors.Location = new System.Drawing.Point(310, 543);
             this.lActors.Name = "lActors";
-            this.lActors.Size = new System.Drawing.Size(125, 45);
+            this.lActors.Size = new System.Drawing.Size(134, 45);
             this.lActors.TabIndex = 14;
             this.lActors.Text = "Актеры :";
             this.lActors.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -227,7 +224,7 @@
             this.lWriters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lWriters.Location = new System.Drawing.Point(5, 543);
             this.lWriters.Name = "lWriters";
-            this.lWriters.Size = new System.Drawing.Size(123, 45);
+            this.lWriters.Size = new System.Drawing.Size(114, 45);
             this.lWriters.TabIndex = 15;
             this.lWriters.Text = "Писатели :";
             this.lWriters.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -237,9 +234,9 @@
             this.lWebSite.AutoSize = true;
             this.lWebSite.BackColor = System.Drawing.Color.Gainsboro;
             this.lWebSite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lWebSite.Location = new System.Drawing.Point(331, 590);
+            this.lWebSite.Location = new System.Drawing.Point(310, 590);
             this.lWebSite.Name = "lWebSite";
-            this.lWebSite.Size = new System.Drawing.Size(125, 50);
+            this.lWebSite.Size = new System.Drawing.Size(134, 50);
             this.lWebSite.TabIndex = 16;
             this.lWebSite.Text = "Сайт :";
             this.lWebSite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -249,9 +246,9 @@
             this.lDVD.AutoSize = true;
             this.lDVD.BackColor = System.Drawing.Color.Gainsboro;
             this.lDVD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lDVD.Location = new System.Drawing.Point(331, 250);
+            this.lDVD.Location = new System.Drawing.Point(310, 250);
             this.lDVD.Name = "lDVD";
-            this.lDVD.Size = new System.Drawing.Size(125, 34);
+            this.lDVD.Size = new System.Drawing.Size(134, 34);
             this.lDVD.TabIndex = 17;
             this.lDVD.Text = "Дата выхода на DVD :";
             this.lDVD.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -261,9 +258,9 @@
             this.lBoxOffice.AutoSize = true;
             this.lBoxOffice.BackColor = System.Drawing.Color.Gainsboro;
             this.lBoxOffice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lBoxOffice.Location = new System.Drawing.Point(331, 642);
+            this.lBoxOffice.Location = new System.Drawing.Point(310, 642);
             this.lBoxOffice.Name = "lBoxOffice";
-            this.lBoxOffice.Size = new System.Drawing.Size(125, 44);
+            this.lBoxOffice.Size = new System.Drawing.Size(134, 44);
             this.lBoxOffice.TabIndex = 18;
             this.lBoxOffice.Text = "Кассовые сборы :";
             this.lBoxOffice.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -275,7 +272,7 @@
             this.lProduction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lProduction.Location = new System.Drawing.Point(5, 590);
             this.lProduction.Name = "lProduction";
-            this.lProduction.Size = new System.Drawing.Size(123, 50);
+            this.lProduction.Size = new System.Drawing.Size(114, 50);
             this.lProduction.TabIndex = 19;
             this.lProduction.Text = "Студия производитель :";
             this.lProduction.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -287,7 +284,7 @@
             this.lLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lLanguage.Location = new System.Drawing.Point(5, 488);
             this.lLanguage.Name = "lLanguage";
-            this.lLanguage.Size = new System.Drawing.Size(123, 53);
+            this.lLanguage.Size = new System.Drawing.Size(114, 53);
             this.lLanguage.TabIndex = 20;
             this.lLanguage.Text = "Язык :";
             this.lLanguage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -299,7 +296,7 @@
             this.lMetascore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lMetascore.Location = new System.Drawing.Point(5, 688);
             this.lMetascore.Name = "lMetascore";
-            this.lMetascore.Size = new System.Drawing.Size(123, 28);
+            this.lMetascore.Size = new System.Drawing.Size(114, 28);
             this.lMetascore.TabIndex = 21;
             this.lMetascore.Text = "Metascore :";
             this.lMetascore.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -309,9 +306,9 @@
             this.lImdbRating.AutoSize = true;
             this.lImdbRating.BackColor = System.Drawing.Color.Gainsboro;
             this.lImdbRating.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lImdbRating.Location = new System.Drawing.Point(331, 688);
+            this.lImdbRating.Location = new System.Drawing.Point(310, 688);
             this.lImdbRating.Name = "lImdbRating";
-            this.lImdbRating.Size = new System.Drawing.Size(125, 28);
+            this.lImdbRating.Size = new System.Drawing.Size(134, 28);
             this.lImdbRating.TabIndex = 22;
             this.lImdbRating.Text = "IMDB рейтинг :";
             this.lImdbRating.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -322,8 +319,8 @@
             this.tableLP_info.ColumnCount = 4;
             this.tableLP_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.95984F));
             this.tableLP_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.04016F));
-            this.tableLP_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
-            this.tableLP_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 305F));
+            this.tableLP_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLP_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 317F));
             this.tableLP_info.Controls.Add(this.lTitle, 0, 0);
             this.tableLP_info.Controls.Add(this.lImdbRating, 2, 12);
             this.tableLP_info.Controls.Add(this.lMetascore, 0, 12);
@@ -343,19 +340,18 @@
             this.tableLP_info.Controls.Add(this.lPlot, 0, 7);
             this.tableLP_info.Controls.Add(this.lLanguage, 0, 8);
             this.tableLP_info.Controls.Add(this.lCountry, 2, 8);
-            this.tableLP_info.Controls.Add(this.dataGridView1, 1, 9);
-            this.tableLP_info.Controls.Add(this.dataGridView2, 3, 9);
             this.tableLP_info.Controls.Add(this.groupBox1, 0, 13);
             this.tableLP_info.Controls.Add(this.lRating, 2, 2);
             this.tableLP_info.Controls.Add(this.lYear, 2, 3);
+            this.tableLP_info.Controls.Add(this.textBox1, 3, 2);
             this.tableLP_info.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLP_info.Location = new System.Drawing.Point(0, 0);
             this.tableLP_info.Name = "tableLP_info";
             this.tableLP_info.RowCount = 14;
             this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.9214F));
             this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.0786F));
-            this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
-            this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLP_info.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
@@ -370,24 +366,6 @@
             this.tableLP_info.Size = new System.Drawing.Size(769, 758);
             this.tableLP_info.TabIndex = 23;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(136, 546);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(187, 39);
-            this.dataGridView1.TabIndex = 23;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(464, 546);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(300, 39);
-            this.dataGridView2.TabIndex = 24;
-            // 
             // groupBox1
             // 
             this.tableLP_info.SetColumnSpan(this.groupBox1, 4);
@@ -397,6 +375,13 @@
             this.groupBox1.Size = new System.Drawing.Size(759, 32);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(452, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(312, 20);
+            this.textBox1.TabIndex = 26;
             // 
             // ShowFilmForm
             // 
@@ -410,8 +395,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturePoster)).EndInit();
             this.tableLP_info.ResumeLayout(false);
             this.tableLP_info.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,8 +423,7 @@
         private System.Windows.Forms.Label lLanguage;
         private System.Windows.Forms.Label lMetascore;
         private System.Windows.Forms.Label lImdbRating;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
