@@ -134,5 +134,10 @@ namespace FilmsApp.Forms.Base
         {
             ShowNextForm(new ShowFeedBackFirmForm(), true);
         }
+
+        private void buttonAddFeedBack_Click(object sender, EventArgs e)
+        {
+            ShowNextForm(new FeedBackAddForm(), true);
+        }
     }
 }

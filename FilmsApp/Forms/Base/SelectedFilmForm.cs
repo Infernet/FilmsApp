@@ -1,4 +1,5 @@
 ﻿using FilmsApp.Classes.SQL;
+using FilmsApp.Forms.Moderator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,6 +87,11 @@ namespace FilmsApp.Forms.Base
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        private void buttonModeratorFeedBack_Click(object sender, EventArgs e)
+        {
+            ShowNextForm(new FeedBackModerationForm());
         }
     }
 }

@@ -28,14 +28,6 @@ namespace FilmsApp.Forms.Base
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonShowSelectedFilm = new System.Windows.Forms.Button();
-            this.buttonFilmAdd = new System.Windows.Forms.Button();
-            this.buttonShowMovie = new System.Windows.Forms.Button();
-            this.buttonSelectFilther = new System.Windows.Forms.Button();
-            this.vMoviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movieDBDataSet = new FilmsApp.MovieDBDataSet();
-            this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
             this.PosterImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.FilmIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posterData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +39,18 @@ namespace FilmsApp.Forms.Base
             this.странаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.режиссёрDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.рейтинг10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vMoviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movieDBDataSet = new FilmsApp.MovieDBDataSet();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonShowSelectedFilm = new System.Windows.Forms.Button();
+            this.buttonFilmAdd = new System.Windows.Forms.Button();
+            this.buttonModeratorFeedBack = new System.Windows.Forms.Button();
+            this.buttonSelectFilther = new System.Windows.Forms.Button();
+            this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -102,71 +102,6 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.buttonShowSelectedFilm);
-            this.groupBox1.Controls.Add(this.buttonFilmAdd);
-            this.groupBox1.Controls.Add(this.buttonShowMovie);
-            this.groupBox1.Controls.Add(this.buttonSelectFilther);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 572);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1221, 100);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
-            // buttonShowSelectedFilm
-            // 
-            this.buttonShowSelectedFilm.Location = new System.Drawing.Point(142, 33);
-            this.buttonShowSelectedFilm.Name = "buttonShowSelectedFilm";
-            this.buttonShowSelectedFilm.Size = new System.Drawing.Size(80, 45);
-            this.buttonShowSelectedFilm.TabIndex = 3;
-            this.buttonShowSelectedFilm.Text = "Подробнее о фильме";
-            this.buttonShowSelectedFilm.UseVisualStyleBackColor = true;
-            this.buttonShowSelectedFilm.Click += new System.EventHandler(this.buttonShowSelectedFilm_Click);
-            // 
-            // buttonFilmAdd
-            // 
-            this.buttonFilmAdd.Location = new System.Drawing.Point(767, 44);
-            this.buttonFilmAdd.Name = "buttonFilmAdd";
-            this.buttonFilmAdd.Size = new System.Drawing.Size(160, 23);
-            this.buttonFilmAdd.TabIndex = 2;
-            this.buttonFilmAdd.Text = "Добавление фильма в базу";
-            this.buttonFilmAdd.UseVisualStyleBackColor = true;
-            // 
-            // buttonShowMovie
-            // 
-            this.buttonShowMovie.Location = new System.Drawing.Point(363, 45);
-            this.buttonShowMovie.Name = "buttonShowMovie";
-            this.buttonShowMovie.Size = new System.Drawing.Size(138, 23);
-            this.buttonShowMovie.TabIndex = 1;
-            this.buttonShowMovie.Text = "Подробнее о фильме";
-            this.buttonShowMovie.UseVisualStyleBackColor = true;
-            // 
-            // buttonSelectFilther
-            // 
-            this.buttonSelectFilther.Location = new System.Drawing.Point(587, 45);
-            this.buttonSelectFilther.Name = "buttonSelectFilther";
-            this.buttonSelectFilther.Size = new System.Drawing.Size(75, 23);
-            this.buttonSelectFilther.TabIndex = 0;
-            this.buttonSelectFilther.Text = "Фильтр";
-            this.buttonSelectFilther.UseVisualStyleBackColor = true;
-            this.buttonSelectFilther.Click += new System.EventHandler(this.buttonSelectFilther_Click);
-            // 
-            // vMoviesBindingSource
-            // 
-            this.vMoviesBindingSource.DataMember = "vMovies";
-            this.vMoviesBindingSource.DataSource = this.movieDBDataSet;
-            // 
-            // movieDBDataSet
-            // 
-            this.movieDBDataSet.DataSetName = "MovieDBDataSet";
-            this.movieDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vMoviesTableAdapter
-            // 
-            this.vMoviesTableAdapter.ClearBeforeFill = true;
             // 
             // PosterImage
             // 
@@ -268,6 +203,72 @@ namespace FilmsApp.Forms.Base
             this.рейтинг10DataGridViewTextBoxColumn.Name = "рейтинг10DataGridViewTextBoxColumn";
             this.рейтинг10DataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // vMoviesBindingSource
+            // 
+            this.vMoviesBindingSource.DataMember = "vMovies";
+            this.vMoviesBindingSource.DataSource = this.movieDBDataSet;
+            // 
+            // movieDBDataSet
+            // 
+            this.movieDBDataSet.DataSetName = "MovieDBDataSet";
+            this.movieDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonShowSelectedFilm);
+            this.groupBox1.Controls.Add(this.buttonFilmAdd);
+            this.groupBox1.Controls.Add(this.buttonModeratorFeedBack);
+            this.groupBox1.Controls.Add(this.buttonSelectFilther);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 572);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1221, 100);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            // 
+            // buttonShowSelectedFilm
+            // 
+            this.buttonShowSelectedFilm.Location = new System.Drawing.Point(12, 23);
+            this.buttonShowSelectedFilm.Name = "buttonShowSelectedFilm";
+            this.buttonShowSelectedFilm.Size = new System.Drawing.Size(80, 45);
+            this.buttonShowSelectedFilm.TabIndex = 3;
+            this.buttonShowSelectedFilm.Text = "Подробнее о фильме";
+            this.buttonShowSelectedFilm.UseVisualStyleBackColor = true;
+            this.buttonShowSelectedFilm.Click += new System.EventHandler(this.buttonShowSelectedFilm_Click);
+            // 
+            // buttonFilmAdd
+            // 
+            this.buttonFilmAdd.Location = new System.Drawing.Point(767, 44);
+            this.buttonFilmAdd.Name = "buttonFilmAdd";
+            this.buttonFilmAdd.Size = new System.Drawing.Size(160, 23);
+            this.buttonFilmAdd.TabIndex = 2;
+            this.buttonFilmAdd.Text = "Добавление фильма в базу";
+            this.buttonFilmAdd.UseVisualStyleBackColor = true;
+            // 
+            // buttonModeratorFeedBack
+            // 
+            this.buttonModeratorFeedBack.Location = new System.Drawing.Point(111, 23);
+            this.buttonModeratorFeedBack.Name = "buttonModeratorFeedBack";
+            this.buttonModeratorFeedBack.Size = new System.Drawing.Size(93, 44);
+            this.buttonModeratorFeedBack.TabIndex = 1;
+            this.buttonModeratorFeedBack.Text = "Модерация отзывов";
+            this.buttonModeratorFeedBack.UseVisualStyleBackColor = true;
+            this.buttonModeratorFeedBack.Click += new System.EventHandler(this.buttonModeratorFeedBack_Click);
+            // 
+            // buttonSelectFilther
+            // 
+            this.buttonSelectFilther.Location = new System.Drawing.Point(587, 45);
+            this.buttonSelectFilther.Name = "buttonSelectFilther";
+            this.buttonSelectFilther.Size = new System.Drawing.Size(75, 23);
+            this.buttonSelectFilther.TabIndex = 0;
+            this.buttonSelectFilther.Text = "Фильтр";
+            this.buttonSelectFilther.UseVisualStyleBackColor = true;
+            this.buttonSelectFilther.Click += new System.EventHandler(this.buttonSelectFilther_Click);
+            // 
+            // vMoviesTableAdapter
+            // 
+            this.vMoviesTableAdapter.ClearBeforeFill = true;
+            // 
             // SelectedFilmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,9 +278,9 @@ namespace FilmsApp.Forms.Base
             this.Name = "SelectedFilmForm";
             this.Load += new System.EventHandler(this.SelectedFilmForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -290,7 +291,7 @@ namespace FilmsApp.Forms.Base
         private MovieDBDataSetTableAdapters.vMoviesTableAdapter vMoviesTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonFilmAdd;
-        private System.Windows.Forms.Button buttonShowMovie;
+        private System.Windows.Forms.Button buttonModeratorFeedBack;
         private System.Windows.Forms.Button buttonSelectFilther;
         private System.Windows.Forms.Button buttonShowSelectedFilm;
         private System.Windows.Forms.DataGridViewImageColumn PosterImage;

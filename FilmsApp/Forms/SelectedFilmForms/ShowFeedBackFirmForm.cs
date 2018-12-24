@@ -22,7 +22,7 @@ namespace FilmsApp.Forms.SelectedFilmForms
 
         private void comboBoxFeedBack_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string cmd = "FeedBackId=" + comboBoxFeedBack.SelectedValue.ToString();
+            string cmd = "FeedBackId=" + comboBoxFeedBack.SelectedValue.ToString()+" and Allowed=1";
             DateTime dateTime;
             tbComment.Text = movieDBDataSet.UserFeedBack.Select(cmd)[0]["Comment"].ToString();
             DateTime.TryParse(movieDBDataSet.UserFeedBack.Select(cmd)[0]["SendDate"].ToString(), out dateTime);
@@ -33,7 +33,7 @@ namespace FilmsApp.Forms.SelectedFilmForms
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet.UserFeedBack". При необходимости она может быть перемещена или удалена.
             this.userFeedBackTableAdapter.Fill(this.movieDBDataSet.UserFeedBack);
-            comboBoxFeedBack.DataSource = movieDBDataSet.UserFeedBack.Select("MovieId=" + SqlManipul.GetInstance().CurrentFilmId);
+            comboBoxFeedBack.DataSource = movieDBDataSet.UserFeedBack.Select("MovieId=" + SqlManipul.GetInstance().CurrentFilmId +" and Allowed=1");
         }
 
     }
