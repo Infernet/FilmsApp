@@ -30,6 +30,9 @@
         {
             this.buttonPrintPrinter = new System.Windows.Forms.Button();
             this.buttonSaveOnDisk = new System.Windows.Forms.Button();
+            this.printPoster = new System.Drawing.Printing.PrintDocument();
+            this.printPosterDialog = new System.Windows.Forms.PrintDialog();
+            this.savePosterDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // buttonPrintPrinter
@@ -41,6 +44,7 @@
             this.buttonPrintPrinter.TabIndex = 0;
             this.buttonPrintPrinter.Text = "Печать постера на принтере";
             this.buttonPrintPrinter.UseVisualStyleBackColor = true;
+            this.buttonPrintPrinter.Click += new System.EventHandler(this.buttonPrintPrinter_Click);
             // 
             // buttonSaveOnDisk
             // 
@@ -51,6 +55,15 @@
             this.buttonSaveOnDisk.TabIndex = 1;
             this.buttonSaveOnDisk.Text = "Сохранить постер на диске";
             this.buttonSaveOnDisk.UseVisualStyleBackColor = true;
+            this.buttonSaveOnDisk.Click += new System.EventHandler(this.buttonSaveOnDisk_Click);
+            // 
+            // printPoster
+            // 
+            this.printPoster.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPosterDialog
+            // 
+            this.printPosterDialog.UseEXDialog = true;
             // 
             // PrintOrSavePosterForm
             // 
@@ -69,5 +82,8 @@
 
         private System.Windows.Forms.Button buttonPrintPrinter;
         private System.Windows.Forms.Button buttonSaveOnDisk;
+        private System.Drawing.Printing.PrintDocument printPoster;
+        private System.Windows.Forms.PrintDialog printPosterDialog;
+        private System.Windows.Forms.SaveFileDialog savePosterDialog;
     }
 }
