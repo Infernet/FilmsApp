@@ -26,14 +26,18 @@ namespace FilmsApp.Forms.Base
             switch (UserDAO.GetInstance().Role)
             {
                 case "Администратор":
-                    buttonFilmAdd.Visible = true;
-                    buttonFilmAdd.Enabled = true;
-                    buttonModeratorFeedBack.Visible = true;
-                    buttonModeratorFeedBack.Enabled = true;
+                    {
+                        buttonFilmAdd.Visible = true;
+                        buttonFilmAdd.Enabled = true;
+                        buttonModeratorFeedBack.Visible = true;
+                        buttonModeratorFeedBack.Enabled = true;
+                    }
                     break;
                 case "Модератор":
-                    buttonModeratorFeedBack.Visible = true;
-                    buttonModeratorFeedBack.Enabled = true;
+                    {
+                        buttonModeratorFeedBack.Visible = true;
+                        buttonModeratorFeedBack.Enabled = true;
+                    }
                     break;
                 default:
                     break;
@@ -63,7 +67,7 @@ namespace FilmsApp.Forms.Base
             switch (result)
             {
                 case DialogResult.Abort:
-                        DialogResult = DialogResult.Abort;
+                    DialogResult = DialogResult.Abort;
                     break;
                 case DialogResult.Yes:
                     {
@@ -84,8 +88,9 @@ namespace FilmsApp.Forms.Base
                 default:
                     break;
             }
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                dataGridView1.Rows[i].Cells["PosterImage"].Value = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
+            if (result != DialogResult.Abort)
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    dataGridView1.Rows[i].Cells["PosterImage"].Value = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
         }
 
         private void buttonShowSelectedFilm_Click(object sender, EventArgs e)
@@ -135,65 +140,3 @@ namespace FilmsApp.Forms.Base
         }
     }
 }
-
-//бекап метода фильтрации
-/*
- 
-    private void buttonSelectFilther_Click(object sender, EventArgs e)
-        {
-            // BaseForm filter = ;
-            DialogResult result= new MovieFilterForm().ShowDialog();
-            switch (result)
-            {
-                case DialogResult.Yes:
-                    {
-                        MessageBox.Show("Фильтрация");
-                        using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
-                        {
-                            connection.Open();
-                            SqlCommand command = SqlManipul.GetInstance().GetFilterCommand();
-                            command.Connection = connection;
-                            SqlDataAdapter adapter = new SqlDataAdapter(command);
-                            this.movieDBDataSet.vMovies.Clear();
-                            adapter.Fill(this.movieDBDataSet.vMovies);
-
-                        }
-                        dataGridView1.DataSource = movieDBDataSet.vMovies;
-                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                        {
-                            Image poster = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
-                            dataGridView1.Rows[i].Cells["PosterImage"].Value = poster;
-
-                        }
-                        //SqlCommand command = SqlManipul.GetInstance().GetFilterCommand();
-                        //vMoviesTableAdapter.Adapter.SelectCommand.CommandText = command.CommandText;
-                        //List<SqlParameter> paramList = new List<SqlParameter>();
-                        //foreach (SqlParameter item in command.Parameters)
-                        //{
-                        //    paramList.Add(item);
-                        //}
-                        //command.Parameters.Clear();
-                        //foreach (SqlParameter param in paramList)
-                        //    vMoviesTableAdapter.Adapter.SelectCommand.Parameters.Add(param); 
-                        //this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
-                    }
-                    break;
-                case DialogResult.No:
-                    {
-                        MessageBox.Show("Сброс");
-                        vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
-                        dataGridView1.DataSource = movieDBDataSet.vMovies;
-                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                        {
-                            Image poster = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
-                            dataGridView1.Rows[i].Cells["PosterImage"].Value = poster;
-
-                        }
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-
- */

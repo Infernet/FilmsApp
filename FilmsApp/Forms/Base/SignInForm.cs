@@ -39,6 +39,8 @@ namespace FilmsApp.Forms.Base
                 }
                 else
                     MessageBox.Show("Авторизация не удалась, проверьте правильность ввода логина и пароля", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Введите имя пользователя и пароль.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         /// <summary>
         /// переход на форму регистрации

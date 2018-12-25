@@ -749,10 +749,10 @@
             // 
             // lTitle
             // 
-            this.lTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLP_info.SetColumnSpan(this.lTitle, 2);
             this.lTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lTitle.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lTitle.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lTitle.Location = new System.Drawing.Point(7, 316);
             this.lTitle.Margin = new System.Windows.Forms.Padding(7);
             this.lTitle.Name = "lTitle";

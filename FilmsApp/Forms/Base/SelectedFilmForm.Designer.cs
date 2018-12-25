@@ -37,17 +37,6 @@ namespace FilmsApp.Forms.Base
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vMoviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movieDBDataSet = new FilmsApp.MovieDBDataSet();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonShowSelectedFilm = new System.Windows.Forms.Button();
-            this.buttonFilmAdd = new System.Windows.Forms.Button();
-            this.buttonModeratorFeedBack = new System.Windows.Forms.Button();
-            this.buttonSelectFilther = new System.Windows.Forms.Button();
-            this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.PosterImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.FilmIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posterData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +48,17 @@ namespace FilmsApp.Forms.Base
             this.странаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.режиссёрDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.рейтинг10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vMoviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movieDBDataSet = new FilmsApp.MovieDBDataSet();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonShowSelectedFilm = new System.Windows.Forms.Button();
+            this.buttonFilmAdd = new System.Windows.Forms.Button();
+            this.buttonModeratorFeedBack = new System.Windows.Forms.Button();
+            this.buttonSelectFilther = new System.Windows.Forms.Button();
+            this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).BeginInit();
@@ -82,7 +82,7 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -105,7 +105,7 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.DataSource = this.vMoviesBindingSource;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -114,7 +114,7 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(5, 5);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -133,128 +133,6 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
-            // 
-            // vMoviesBindingSource
-            // 
-            this.vMoviesBindingSource.DataMember = "vMovies";
-            this.vMoviesBindingSource.DataSource = this.movieDBDataSet;
-            // 
-            // movieDBDataSet
-            // 
-            this.movieDBDataSet.DataSetName = "MovieDBDataSet";
-            this.movieDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.pictureBoxIcon);
-            this.groupBox1.Controls.Add(this.buttonExit);
-            this.groupBox1.Controls.Add(this.buttonShowSelectedFilm);
-            this.groupBox1.Controls.Add(this.buttonFilmAdd);
-            this.groupBox1.Controls.Add(this.buttonModeratorFeedBack);
-            this.groupBox1.Controls.Add(this.buttonSelectFilther);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(5, 550);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1175, 132);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.buttonExit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonExit.Location = new System.Drawing.Point(913, 69);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(108, 51);
-            this.buttonExit.TabIndex = 24;
-            this.buttonExit.Text = "Выйти";
-            this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // buttonShowSelectedFilm
-            // 
-            this.buttonShowSelectedFilm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.buttonShowSelectedFilm.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonShowSelectedFilm.Location = new System.Drawing.Point(13, 69);
-            this.buttonShowSelectedFilm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonShowSelectedFilm.Name = "buttonShowSelectedFilm";
-            this.buttonShowSelectedFilm.Size = new System.Drawing.Size(190, 51);
-            this.buttonShowSelectedFilm.TabIndex = 3;
-            this.buttonShowSelectedFilm.Text = "Подробнее о фильме";
-            this.buttonShowSelectedFilm.UseVisualStyleBackColor = false;
-            this.buttonShowSelectedFilm.Click += new System.EventHandler(this.buttonShowSelectedFilm_Click);
-            // 
-            // buttonFilmAdd
-            // 
-            this.buttonFilmAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.buttonFilmAdd.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonFilmAdd.Location = new System.Drawing.Point(655, 69);
-            this.buttonFilmAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonFilmAdd.Name = "buttonFilmAdd";
-            this.buttonFilmAdd.Size = new System.Drawing.Size(239, 51);
-            this.buttonFilmAdd.TabIndex = 2;
-            this.buttonFilmAdd.Text = "Добавление фильма в базу";
-            this.buttonFilmAdd.UseVisualStyleBackColor = false;
-            this.buttonFilmAdd.Click += new System.EventHandler(this.buttonFilmAdd_Click);
-            // 
-            // buttonModeratorFeedBack
-            // 
-            this.buttonModeratorFeedBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.buttonModeratorFeedBack.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonModeratorFeedBack.Location = new System.Drawing.Point(440, 69);
-            this.buttonModeratorFeedBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonModeratorFeedBack.Name = "buttonModeratorFeedBack";
-            this.buttonModeratorFeedBack.Size = new System.Drawing.Size(183, 51);
-            this.buttonModeratorFeedBack.TabIndex = 1;
-            this.buttonModeratorFeedBack.Text = "Модерация отзывов";
-            this.buttonModeratorFeedBack.UseVisualStyleBackColor = false;
-            this.buttonModeratorFeedBack.Click += new System.EventHandler(this.buttonModeratorFeedBack_Click);
-            // 
-            // buttonSelectFilther
-            // 
-            this.buttonSelectFilther.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.buttonSelectFilther.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonSelectFilther.Location = new System.Drawing.Point(223, 69);
-            this.buttonSelectFilther.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonSelectFilther.Name = "buttonSelectFilther";
-            this.buttonSelectFilther.Size = new System.Drawing.Size(176, 51);
-            this.buttonSelectFilther.TabIndex = 0;
-            this.buttonSelectFilther.Text = "Фильтр";
-            this.buttonSelectFilther.UseVisualStyleBackColor = false;
-            this.buttonSelectFilther.Click += new System.EventHandler(this.buttonSelectFilther_Click);
-            // 
-            // vMoviesTableAdapter
-            // 
-            this.vMoviesTableAdapter.ClearBeforeFill = true;
-            // 
-            // pictureBoxIcon
-            // 
-            this.pictureBoxIcon.Location = new System.Drawing.Point(1033, 15);
-            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(137, 112);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxIcon.TabIndex = 25;
-            this.pictureBoxIcon.TabStop = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.59184F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.40816F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1185, 687);
-            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // PosterImage
             // 
@@ -386,6 +264,134 @@ namespace FilmsApp.Forms.Base
             this.рейтинг10DataGridViewTextBoxColumn.HeaderText = "Рейтинг /10";
             this.рейтинг10DataGridViewTextBoxColumn.Name = "рейтинг10DataGridViewTextBoxColumn";
             this.рейтинг10DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vMoviesBindingSource
+            // 
+            this.vMoviesBindingSource.DataMember = "vMovies";
+            this.vMoviesBindingSource.DataSource = this.movieDBDataSet;
+            // 
+            // movieDBDataSet
+            // 
+            this.movieDBDataSet.DataSetName = "MovieDBDataSet";
+            this.movieDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBoxIcon);
+            this.groupBox1.Controls.Add(this.buttonExit);
+            this.groupBox1.Controls.Add(this.buttonShowSelectedFilm);
+            this.groupBox1.Controls.Add(this.buttonFilmAdd);
+            this.groupBox1.Controls.Add(this.buttonModeratorFeedBack);
+            this.groupBox1.Controls.Add(this.buttonSelectFilther);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(5, 550);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1175, 132);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.Location = new System.Drawing.Point(1033, 15);
+            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(137, 112);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIcon.TabIndex = 25;
+            this.pictureBoxIcon.TabStop = false;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+            this.buttonExit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonExit.Location = new System.Drawing.Point(913, 69);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(108, 51);
+            this.buttonExit.TabIndex = 24;
+            this.buttonExit.Text = "Выйти";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonShowSelectedFilm
+            // 
+            this.buttonShowSelectedFilm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+            this.buttonShowSelectedFilm.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonShowSelectedFilm.Location = new System.Drawing.Point(13, 69);
+            this.buttonShowSelectedFilm.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonShowSelectedFilm.Name = "buttonShowSelectedFilm";
+            this.buttonShowSelectedFilm.Size = new System.Drawing.Size(190, 51);
+            this.buttonShowSelectedFilm.TabIndex = 3;
+            this.buttonShowSelectedFilm.Text = "Подробнее о фильме";
+            this.buttonShowSelectedFilm.UseVisualStyleBackColor = false;
+            this.buttonShowSelectedFilm.Click += new System.EventHandler(this.buttonShowSelectedFilm_Click);
+            // 
+            // buttonFilmAdd
+            // 
+            this.buttonFilmAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+            this.buttonFilmAdd.Enabled = false;
+            this.buttonFilmAdd.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonFilmAdd.Location = new System.Drawing.Point(655, 69);
+            this.buttonFilmAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFilmAdd.Name = "buttonFilmAdd";
+            this.buttonFilmAdd.Size = new System.Drawing.Size(239, 51);
+            this.buttonFilmAdd.TabIndex = 2;
+            this.buttonFilmAdd.TabStop = false;
+            this.buttonFilmAdd.Text = "Добавление фильма в базу";
+            this.buttonFilmAdd.UseVisualStyleBackColor = false;
+            this.buttonFilmAdd.Visible = false;
+            this.buttonFilmAdd.Click += new System.EventHandler(this.buttonFilmAdd_Click);
+            // 
+            // buttonModeratorFeedBack
+            // 
+            this.buttonModeratorFeedBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+            this.buttonModeratorFeedBack.Enabled = false;
+            this.buttonModeratorFeedBack.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonModeratorFeedBack.Location = new System.Drawing.Point(440, 69);
+            this.buttonModeratorFeedBack.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonModeratorFeedBack.Name = "buttonModeratorFeedBack";
+            this.buttonModeratorFeedBack.Size = new System.Drawing.Size(183, 51);
+            this.buttonModeratorFeedBack.TabIndex = 1;
+            this.buttonModeratorFeedBack.TabStop = false;
+            this.buttonModeratorFeedBack.Text = "Модерация отзывов";
+            this.buttonModeratorFeedBack.UseVisualStyleBackColor = false;
+            this.buttonModeratorFeedBack.Visible = false;
+            this.buttonModeratorFeedBack.Click += new System.EventHandler(this.buttonModeratorFeedBack_Click);
+            // 
+            // buttonSelectFilther
+            // 
+            this.buttonSelectFilther.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
+            this.buttonSelectFilther.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonSelectFilther.Location = new System.Drawing.Point(223, 69);
+            this.buttonSelectFilther.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSelectFilther.Name = "buttonSelectFilther";
+            this.buttonSelectFilther.Size = new System.Drawing.Size(176, 51);
+            this.buttonSelectFilther.TabIndex = 0;
+            this.buttonSelectFilther.Text = "Фильтр";
+            this.buttonSelectFilther.UseVisualStyleBackColor = false;
+            this.buttonSelectFilther.Click += new System.EventHandler(this.buttonSelectFilther_Click);
+            // 
+            // vMoviesTableAdapter
+            // 
+            this.vMoviesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.59184F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.40816F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1185, 687);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // SelectedFilmForm
             // 
