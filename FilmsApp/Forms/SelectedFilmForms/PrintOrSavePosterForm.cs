@@ -1,8 +1,10 @@
-﻿using FilmsApp.Forms.Base;
+﻿using FilmsApp.Classes.SQL;
+using FilmsApp.Forms.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,11 +15,17 @@ namespace FilmsApp.Forms.SelectedFilmForms
 {
     public partial class PrintOrSavePosterForm : BaseForm
     {
-        string path = Application.StartupPath + @"\Resources\Images\Default.jpg";
+        private string path;
         public PrintOrSavePosterForm()
         {
             InitializeComponent();
-
+            using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("select Poster from Movie where MovieId=@filmid", connection);
+                command.Parameters.Add(new SqlParameter("@filmid", SqlDbType.Int) { Value = SqlManipul.GetInstance().CurrentFilmId });
+                path=Application.StartupPath+@"\Resources\Images\"+ command.ExecuteScalar().ToString();
+            }
         }
 
         private void buttonPrintPrinter_Click(object sender, EventArgs e)

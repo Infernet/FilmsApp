@@ -180,5 +180,10 @@ namespace FilmsApp.Forms.Base
             SqlManipul.GetInstance().YearFilterVal = (checkEnableYear.Checked) ? (int)numericYear.Value : -1;
             this.DialogResult = DialogResult.Yes;
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
+        }
     }
 }

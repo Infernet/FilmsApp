@@ -1,6 +1,7 @@
 ﻿using FilmsApp.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -145,6 +146,26 @@ namespace FilmsApp.Classes.SQL
             LanguageFilterId = -1;
             RatedFilterId = -1;
             CurrentFilmId = -1;
+        }
+
+        public bool ValidMovieTitle(string title)
+        {
+            bool result = false;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("TitleMovieCheck", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                
+                command.Parameters.Add(new SqlParameter("@title", SqlDbType.NVarChar, 50) { Value = title });
+                command.Parameters.Add(new SqlParameter("@result", SqlDbType.Bit) { Value = result,Direction= ParameterDirection.Output });
+                command.ExecuteNonQuery();
+                result=(bool)command.Parameters["@result"].Value;
+            }
+            if (result)
+                return true;
+            else
+                return false;
         }
     }
 }

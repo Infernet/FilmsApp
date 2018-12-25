@@ -1,4 +1,5 @@
 ﻿using FilmsApp.Classes.SQL;
+using FilmsApp.Forms.Admin;
 using FilmsApp.Forms.Moderator;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,9 @@ namespace FilmsApp.Forms.Base
 
         private void SelectedFilmForm_Load_1(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet.vMovies". При необходимости она может быть перемещена или удалена.
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet1.vMovies". При необходимости она может быть перемещена или удалена.
             this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
+
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 dataGridView1.Rows[i].Cells["PosterImage"].Value = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
@@ -43,6 +45,9 @@ namespace FilmsApp.Forms.Base
             DialogResult result= new MovieFilterForm().ShowDialog();
             switch (result)
             {
+                case DialogResult.Abort:
+                        DialogResult = DialogResult.Abort;
+                    break;
                 case DialogResult.Yes:
                     {
                         MessageBox.Show("Фильтрация");
@@ -92,6 +97,18 @@ namespace FilmsApp.Forms.Base
         private void buttonModeratorFeedBack_Click(object sender, EventArgs e)
         {
             ShowNextForm(new FeedBackModerationForm());
+        }
+
+        private void buttonFilmAdd_Click(object sender, EventArgs e)
+        {
+            ShowNextForm(new FilmAddForm());
+            
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
         }
     }
 }

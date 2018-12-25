@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Classes\DAO\UserDAO.cs" />
     <Compile Include="Classes\SQL\SqlManipul.cs" />
+    <Compile Include="Forms\Admin\FilmAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FilmAddForm.Designer.cs">
+      <DependentUpon>FilmAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Admin\FilmAddForm.resx">
+      <DependentUpon>FilmAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>

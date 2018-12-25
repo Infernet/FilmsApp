@@ -48,6 +48,7 @@
             this.numericYear = new System.Windows.Forms.NumericUpDown();
             this.checkEnableYear = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,7 +209,7 @@
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(166, 263);
+            this.buttonReset.Location = new System.Drawing.Point(93, 263);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(75, 23);
             this.buttonReset.TabIndex = 16;
@@ -259,12 +260,23 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Год выхода";
             // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(174, 263);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(67, 23);
+            this.buttonExit.TabIndex = 25;
+            this.buttonExit.Text = "Выйти";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // MovieFilterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(253, 298);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.checkEnableYear);
             this.Controls.Add(this.numericYear);
@@ -316,5 +328,6 @@
         private System.Windows.Forms.NumericUpDown numericYear;
         private System.Windows.Forms.CheckBox checkEnableYear;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

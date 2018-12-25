@@ -25,12 +25,7 @@ namespace FilmsApp.Forms.Base
 
             if (isClose)
             {
-                this.Hide();
-                DialogResult result=nextForm.ShowDialog();
-                if(result==DialogResult.Cancel)
-                {
-                    this.DialogResult=DialogResult.Cancel;
-                }
+                nextForm.ShowDialog();
                 this.Show();
             }
             else

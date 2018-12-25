@@ -24,9 +24,9 @@ namespace FilmsApp.Forms.Base
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PosterImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.FilmIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +47,7 @@ namespace FilmsApp.Forms.Base
             this.buttonModeratorFeedBack = new System.Windows.Forms.Button();
             this.buttonSelectFilther = new System.Windows.Forms.Button();
             this.vMoviesTableAdapter = new FilmsApp.MovieDBDataSetTableAdapters.vMoviesTableAdapter();
+            this.buttonExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vMoviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieDBDataSet)).BeginInit();
@@ -81,14 +82,14 @@ namespace FilmsApp.Forms.Base
             this.рейтинг10DataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.DataSource = this.vMoviesBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
@@ -115,8 +116,8 @@ namespace FilmsApp.Forms.Base
             // FilmIdColumn
             // 
             this.FilmIdColumn.DataPropertyName = "ID";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.FilmIdColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FilmIdColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.FilmIdColumn.HeaderText = "ID";
             this.FilmIdColumn.Name = "FilmIdColumn";
             this.FilmIdColumn.ReadOnly = true;
@@ -134,14 +135,16 @@ namespace FilmsApp.Forms.Base
             // 
             // названиеDataGridViewTextBoxColumn
             // 
+            this.названиеDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.названиеDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.названиеDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.названиеDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
             this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
             this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.названиеDataGridViewTextBoxColumn.Width = 82;
             // 
             // годВыходаDataGridViewTextBoxColumn
             // 
@@ -170,12 +173,14 @@ namespace FilmsApp.Forms.Base
             // 
             // жанрDataGridViewTextBoxColumn
             // 
+            this.жанрDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.жанрDataGridViewTextBoxColumn.DataPropertyName = "Жанр";
             this.жанрDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.жанрDataGridViewTextBoxColumn.HeaderText = "Жанр";
             this.жанрDataGridViewTextBoxColumn.Name = "жанрDataGridViewTextBoxColumn";
             this.жанрDataGridViewTextBoxColumn.ReadOnly = true;
             this.жанрDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.жанрDataGridViewTextBoxColumn.Width = 42;
             // 
             // странаDataGridViewTextBoxColumn
             // 
@@ -215,6 +220,7 @@ namespace FilmsApp.Forms.Base
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonExit);
             this.groupBox1.Controls.Add(this.buttonShowSelectedFilm);
             this.groupBox1.Controls.Add(this.buttonFilmAdd);
             this.groupBox1.Controls.Add(this.buttonModeratorFeedBack);
@@ -244,6 +250,7 @@ namespace FilmsApp.Forms.Base
             this.buttonFilmAdd.TabIndex = 2;
             this.buttonFilmAdd.Text = "Добавление фильма в базу";
             this.buttonFilmAdd.UseVisualStyleBackColor = true;
+            this.buttonFilmAdd.Click += new System.EventHandler(this.buttonFilmAdd_Click);
             // 
             // buttonModeratorFeedBack
             // 
@@ -269,6 +276,16 @@ namespace FilmsApp.Forms.Base
             // 
             this.vMoviesTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(1007, 45);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 33);
+            this.buttonExit.TabIndex = 24;
+            this.buttonExit.Text = "Выйти";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // SelectedFilmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,14 +303,12 @@ namespace FilmsApp.Forms.Base
         }
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private MovieDBDataSet movieDBDataSet;
-        private System.Windows.Forms.BindingSource vMoviesBindingSource;
-        private MovieDBDataSetTableAdapters.vMoviesTableAdapter vMoviesTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonFilmAdd;
         private System.Windows.Forms.Button buttonModeratorFeedBack;
         private System.Windows.Forms.Button buttonSelectFilther;
         private System.Windows.Forms.Button buttonShowSelectedFilm;
+        private MovieDBDataSetTableAdapters.vMoviesTableAdapter vMoviesTableAdapter;
         private System.Windows.Forms.DataGridViewImageColumn PosterImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn FilmIdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posterData;
@@ -305,5 +320,8 @@ namespace FilmsApp.Forms.Base
         private System.Windows.Forms.DataGridViewTextBoxColumn странаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn режиссёрDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn рейтинг10DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource vMoviesBindingSource;
+        private MovieDBDataSet movieDBDataSet;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

@@ -1,4 +1,5 @@
-﻿using FilmsApp.Forms.Base;
+﻿using FilmsApp.Forms.Admin;
+using FilmsApp.Forms.Base;
 using FilmsApp.Forms.SelectedFilmForms;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace FilmsApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new SignInForm());
-            Application.Run(new PrintOrSavePosterForm());
+            Application.Run(new SelectedFilmForm());
         }
     }
 }

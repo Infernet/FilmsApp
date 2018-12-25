@@ -7,45 +7,6 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MovieDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MovieDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FilmsApp.Properties.Settings.GlobalReference.Default.MovieDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMoviesTableAdapter" GeneratorDataComponentClassName="vMoviesTableAdapter" Name="vMovies" UserDataComponentName="vMoviesTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.vMovies" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность (мин)], Жанр, Страна, Режиссёр, [Рейтинг /10], [IMDB Votes], [IMDB rated], MetaScore, [Актёрский состав], Год, [Дата выхода], [Дата выхода на DVD], [Кассовые сборы], Награды, Сайт, Сценарий, [Возрастной рейтинг], Описание, Производство FROM vMovies</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Poster" DataSetColumn="Poster" />
-              <Mapping SourceColumn="Название" DataSetColumn="Название" />
-              <Mapping SourceColumn="Год выхода" DataSetColumn="Год выхода" />
-              <Mapping SourceColumn="Язык" DataSetColumn="Язык" />
-              <Mapping SourceColumn="Длительность (мин)" DataSetColumn="Длительность (мин)" />
-              <Mapping SourceColumn="Жанр" DataSetColumn="Жанр" />
-              <Mapping SourceColumn="Страна" DataSetColumn="Страна" />
-              <Mapping SourceColumn="Режиссёр" DataSetColumn="Режиссёр" />
-              <Mapping SourceColumn="Рейтинг /10" DataSetColumn="Рейтинг /10" />
-              <Mapping SourceColumn="Год" DataSetColumn="Год" />
-              <Mapping SourceColumn="Дата выхода" DataSetColumn="Дата выхода" />
-              <Mapping SourceColumn="MetaScore" DataSetColumn="MetaScore" />
-              <Mapping SourceColumn="IMDB rated" DataSetColumn="IMDB rated" />
-              <Mapping SourceColumn="IMDB Votes" DataSetColumn="IMDB Votes" />
-              <Mapping SourceColumn="Кассовые сборы" DataSetColumn="Кассовые сборы" />
-              <Mapping SourceColumn="Дата выхода на DVD" DataSetColumn="Дата выхода на DVD" />
-              <Mapping SourceColumn="Сайт" DataSetColumn="Сайт" />
-              <Mapping SourceColumn="Награды" DataSetColumn="Награды" />
-              <Mapping SourceColumn="Актёрский состав" DataSetColumn="Актёрский состав" />
-              <Mapping SourceColumn="Сценарий" DataSetColumn="Сценарий" />
-              <Mapping SourceColumn="Возрастной рейтинг" DataSetColumn="Возрастной рейтинг" />
-              <Mapping SourceColumn="Описание" DataSetColumn="Описание" />
-              <Mapping SourceColumn="Производство" DataSetColumn="Производство" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserFeedBackTableAdapter" GeneratorDataComponentClassName="UserFeedBackTableAdapter" Name="UserFeedBack" UserDataComponentName="UserFeedBackTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.UserFeedBack" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -113,6 +74,45 @@ SELECT FeedBackId, MovieId, SendDate, Comment, Allowed, UserName FROM UserFeedBa
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMoviesTableAdapter" GeneratorDataComponentClassName="vMoviesTableAdapter" Name="vMovies" UserDataComponentName="vMoviesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MovieDBConnectionString (Settings)" DbObjectName="MovieDB.dbo.vMovies" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, Poster, Название, [Год выхода], Язык, [Длительность (мин)], Жанр, Страна, Режиссёр, [Рейтинг /10], Год, [Дата выхода], Metascore, [IMDB rated], [IMDB Votes], [Кассовые сборы], [Дата выхода на DVD], Сайт, Награды, [Актёрский состав], Сценарий, [Возрастной рейтинг], Описание, Производство FROM dbo.vMovies</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Poster" DataSetColumn="Poster" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Год выхода" DataSetColumn="Год выхода" />
+              <Mapping SourceColumn="Язык" DataSetColumn="Язык" />
+              <Mapping SourceColumn="Длительность (мин)" DataSetColumn="Длительность (мин)" />
+              <Mapping SourceColumn="Жанр" DataSetColumn="Жанр" />
+              <Mapping SourceColumn="Страна" DataSetColumn="Страна" />
+              <Mapping SourceColumn="Режиссёр" DataSetColumn="Режиссёр" />
+              <Mapping SourceColumn="Рейтинг /10" DataSetColumn="Рейтинг /10" />
+              <Mapping SourceColumn="Год" DataSetColumn="Год" />
+              <Mapping SourceColumn="Дата выхода" DataSetColumn="Дата выхода" />
+              <Mapping SourceColumn="Metascore" DataSetColumn="Metascore" />
+              <Mapping SourceColumn="IMDB rated" DataSetColumn="IMDB rated" />
+              <Mapping SourceColumn="IMDB Votes" DataSetColumn="IMDB Votes" />
+              <Mapping SourceColumn="Кассовые сборы" DataSetColumn="Кассовые сборы" />
+              <Mapping SourceColumn="Дата выхода на DVD" DataSetColumn="Дата выхода на DVD" />
+              <Mapping SourceColumn="Сайт" DataSetColumn="Сайт" />
+              <Mapping SourceColumn="Награды" DataSetColumn="Награды" />
+              <Mapping SourceColumn="Актёрский состав" DataSetColumn="Актёрский состав" />
+              <Mapping SourceColumn="Сценарий" DataSetColumn="Сценарий" />
+              <Mapping SourceColumn="Возрастной рейтинг" DataSetColumn="Возрастной рейтинг" />
+              <Mapping SourceColumn="Описание" DataSetColumn="Описание" />
+              <Mapping SourceColumn="Производство" DataSetColumn="Производство" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -121,7 +121,31 @@ SELECT FeedBackId, MovieId, SendDate, Comment, Allowed, UserName FROM UserFeedBa
   <xs:element name="MovieDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MovieDBDataSet" msprop:Generator_UserDSName="MovieDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vMovies" msprop:Generator_TableClassName="vMoviesDataTable" msprop:Generator_TableVarName="tablevMovies" msprop:Generator_RowChangedName="vMoviesRowChanged" msprop:Generator_TablePropName="vMovies" msprop:Generator_RowDeletingName="vMoviesRowDeleting" msprop:Generator_RowChangingName="vMoviesRowChanging" msprop:Generator_RowEvHandlerName="vMoviesRowChangeEventHandler" msprop:Generator_RowDeletedName="vMoviesRowDeleted" msprop:Generator_RowClassName="vMoviesRow" msprop:Generator_UserTableName="vMovies" msprop:Generator_RowEvArgName="vMoviesRowChangeEvent">
+        <xs:element name="UserFeedBack" msprop:Generator_TableClassName="UserFeedBackDataTable" msprop:Generator_TableVarName="tableUserFeedBack" msprop:Generator_TablePropName="UserFeedBack" msprop:Generator_RowDeletingName="UserFeedBackRowDeleting" msprop:Generator_RowChangingName="UserFeedBackRowChanging" msprop:Generator_RowEvHandlerName="UserFeedBackRowChangeEventHandler" msprop:Generator_RowDeletedName="UserFeedBackRowDeleted" msprop:Generator_UserTableName="UserFeedBack" msprop:Generator_RowChangedName="UserFeedBackRowChanged" msprop:Generator_RowEvArgName="UserFeedBackRowChangeEvent" msprop:Generator_RowClassName="UserFeedBackRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FeedBackId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnFeedBackId" msprop:Generator_ColumnPropNameInRow="FeedBackId" msprop:Generator_ColumnPropNameInTable="FeedBackIdColumn" msprop:Generator_UserColumnName="FeedBackId" type="xs:int" />
+              <xs:element name="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_UserColumnName="MovieId" type="xs:int" />
+              <xs:element name="SendDate" msprop:Generator_ColumnVarNameInTable="columnSendDate" msprop:Generator_ColumnPropNameInRow="SendDate" msprop:Generator_ColumnPropNameInTable="SendDateColumn" msprop:Generator_UserColumnName="SendDate" type="xs:dateTime" />
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Allowed" msprop:Generator_ColumnVarNameInTable="columnAllowed" msprop:Generator_ColumnPropNameInRow="Allowed" msprop:Generator_ColumnPropNameInTable="AllowedColumn" msprop:Generator_UserColumnName="Allowed" type="xs:boolean" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMovies" msprop:Generator_TableClassName="vMoviesDataTable" msprop:Generator_TableVarName="tablevMovies" msprop:Generator_TablePropName="vMovies" msprop:Generator_RowDeletingName="vMoviesRowDeleting" msprop:Generator_RowChangingName="vMoviesRowChanging" msprop:Generator_RowEvHandlerName="vMoviesRowChangeEventHandler" msprop:Generator_RowDeletedName="vMoviesRowDeleted" msprop:Generator_UserTableName="vMovies" msprop:Generator_RowChangedName="vMoviesRowChanged" msprop:Generator_RowEvArgName="vMoviesRowChangeEvent" msprop:Generator_RowClassName="vMoviesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -172,9 +196,9 @@ SELECT FeedBackId, MovieId, SendDate, Comment, Allowed, UserName FROM UserFeedBa
               <xs:element name="Рейтинг_x0020__x002F_10" msprop:Generator_ColumnVarNameInTable="_columnРейтинг__10" msprop:Generator_ColumnPropNameInRow="_Рейтинг__10" msprop:Generator_ColumnPropNameInTable="_Рейтинг__10Column" msprop:Generator_UserColumnName="Рейтинг /10" type="xs:double" />
               <xs:element name="Год" msprop:Generator_ColumnVarNameInTable="columnГод" msprop:Generator_ColumnPropNameInRow="Год" msprop:Generator_ColumnPropNameInTable="ГодColumn" msprop:Generator_UserColumnName="Год" type="xs:int" minOccurs="0" />
               <xs:element name="Дата_x0020_выхода" msprop:Generator_ColumnVarNameInTable="columnДата_выхода" msprop:Generator_ColumnPropNameInRow="Дата_выхода" msprop:Generator_ColumnPropNameInTable="Дата_выходаColumn" msprop:Generator_UserColumnName="Дата выхода" type="xs:dateTime" />
-              <xs:element name="MetaScore" msprop:Generator_ColumnVarNameInTable="columnMetaScore" msprop:Generator_ColumnPropNameInRow="MetaScore" msprop:Generator_ColumnPropNameInTable="MetaScoreColumn" msprop:Generator_UserColumnName="MetaScore" type="xs:int" minOccurs="0" />
-              <xs:element name="IMDB_x0020_rated" msprop:Generator_ColumnVarNameInTable="columnIMDB_rated" msprop:Generator_ColumnPropNameInRow="IMDB_rated" msprop:Generator_ColumnPropNameInTable="IMDB_ratedColumn" msprop:Generator_UserColumnName="IMDB rated" type="xs:double" />
-              <xs:element name="IMDB_x0020_Votes" msprop:Generator_ColumnVarNameInTable="columnIMDB_Votes" msprop:Generator_ColumnPropNameInRow="IMDB_Votes" msprop:Generator_ColumnPropNameInTable="IMDB_VotesColumn" msprop:Generator_UserColumnName="IMDB Votes" type="xs:int" />
+              <xs:element name="Metascore" msprop:Generator_ColumnVarNameInTable="columnMetascore" msprop:Generator_ColumnPropNameInRow="Metascore" msprop:Generator_ColumnPropNameInTable="MetascoreColumn" msprop:Generator_UserColumnName="Metascore" type="xs:int" minOccurs="0" />
+              <xs:element name="IMDB_x0020_rated" msprop:Generator_ColumnVarNameInTable="columnIMDB_rated" msprop:Generator_ColumnPropNameInRow="IMDB_rated" msprop:Generator_ColumnPropNameInTable="IMDB_ratedColumn" msprop:Generator_UserColumnName="IMDB rated" type="xs:double" minOccurs="0" />
+              <xs:element name="IMDB_x0020_Votes" msprop:Generator_ColumnVarNameInTable="columnIMDB_Votes" msprop:Generator_ColumnPropNameInRow="IMDB_Votes" msprop:Generator_ColumnPropNameInTable="IMDB_VotesColumn" msprop:Generator_UserColumnName="IMDB Votes" type="xs:int" minOccurs="0" />
               <xs:element name="Кассовые_x0020_сборы" msprop:Generator_ColumnVarNameInTable="columnКассовые_сборы" msprop:Generator_ColumnPropNameInRow="Кассовые_сборы" msprop:Generator_ColumnPropNameInTable="Кассовые_сборыColumn" msprop:Generator_UserColumnName="Кассовые сборы" type="xs:int" minOccurs="0" />
               <xs:element name="Дата_x0020_выхода_x0020_на_x0020_DVD" msprop:Generator_ColumnVarNameInTable="columnДата_выхода_на_DVD" msprop:Generator_ColumnPropNameInRow="Дата_выхода_на_DVD" msprop:Generator_ColumnPropNameInTable="Дата_выхода_на_DVDColumn" msprop:Generator_UserColumnName="Дата выхода на DVD" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Сайт" msprop:Generator_ColumnVarNameInTable="columnСайт" msprop:Generator_ColumnPropNameInRow="Сайт" msprop:Generator_ColumnPropNameInTable="СайтColumn" msprop:Generator_UserColumnName="Сайт" minOccurs="0">
@@ -229,39 +253,15 @@ SELECT FeedBackId, MovieId, SendDate, Comment, Allowed, UserName FROM UserFeedBa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UserFeedBack" msprop:Generator_TableClassName="UserFeedBackDataTable" msprop:Generator_TableVarName="tableUserFeedBack" msprop:Generator_TablePropName="UserFeedBack" msprop:Generator_RowDeletingName="UserFeedBackRowDeleting" msprop:Generator_RowChangingName="UserFeedBackRowChanging" msprop:Generator_RowEvHandlerName="UserFeedBackRowChangeEventHandler" msprop:Generator_RowDeletedName="UserFeedBackRowDeleted" msprop:Generator_UserTableName="UserFeedBack" msprop:Generator_RowChangedName="UserFeedBackRowChanged" msprop:Generator_RowEvArgName="UserFeedBackRowChangeEvent" msprop:Generator_RowClassName="UserFeedBackRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="FeedBackId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnFeedBackId" msprop:Generator_ColumnPropNameInRow="FeedBackId" msprop:Generator_ColumnPropNameInTable="FeedBackIdColumn" msprop:Generator_UserColumnName="FeedBackId" type="xs:int" />
-              <xs:element name="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_UserColumnName="MovieId" type="xs:int" />
-              <xs:element name="SendDate" msprop:Generator_ColumnVarNameInTable="columnSendDate" msprop:Generator_ColumnPropNameInRow="SendDate" msprop:Generator_ColumnPropNameInTable="SendDateColumn" msprop:Generator_UserColumnName="SendDate" type="xs:dateTime" />
-              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2000" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Allowed" msprop:Generator_ColumnVarNameInTable="columnAllowed" msprop:Generator_ColumnPropNameInRow="Allowed" msprop:Generator_ColumnPropNameInTable="AllowedColumn" msprop:Generator_UserColumnName="Allowed" type="xs:boolean" />
-              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:vMovies" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
-    <xs:unique name="UserFeedBack_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:UserFeedBack" />
       <xs:field xpath="mstns:FeedBackId" />
+    </xs:unique>
+    <xs:unique name="vMovies_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMovies" />
+      <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
 </xs:schema>
