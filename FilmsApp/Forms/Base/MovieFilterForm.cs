@@ -21,6 +21,7 @@ namespace FilmsApp.Forms.Base
         public MovieFilterForm()
         {
             InitializeComponent();
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
             //заполнение comboBox данными по фильтрам из БД
             using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
             {

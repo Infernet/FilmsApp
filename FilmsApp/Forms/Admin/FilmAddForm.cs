@@ -34,6 +34,7 @@ namespace FilmsApp.Forms.Admin
         public FilmAddForm()
         {
             InitializeComponent();
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
             //обязательные поля
             tableLanguage.Columns.Add("Язык");
             tableGenre.Columns.Add("Название жанра");
@@ -228,7 +229,7 @@ namespace FilmsApp.Forms.Admin
                         //награды
                         if (!String.IsNullOrWhiteSpace(tBAwards.Text)) insertCommand.Parameters.Add(new SqlParameter("@Awards", SqlDbType.NVarChar, 100) { Value = tBAwards.Text });
                         //рейтинг imdb
-                        if (numericImdbRated.Value != 0) insertCommand.Parameters.Add(new SqlParameter("@ImdbRating", SqlDbType.Float) { Value = (float)numericImdbRated.Value });
+                        if (numericImdbRated.Value != 0) insertCommand.Parameters.Add(new SqlParameter("@ImdbRating", SqlDbType.Float) { Value = (float)Math.Round(numericImdbRated.Value, 2) });
                         //метасумма
                         if (numericMetaScore.Value != 0) insertCommand.Parameters.Add(new SqlParameter("@MetaScore", SqlDbType.Int) { Value = (int)numericMetaScore.Value });
                         //голоса
@@ -385,5 +386,6 @@ namespace FilmsApp.Forms.Admin
         {
             DialogResult = DialogResult.Abort;
         }
+
     }
 }

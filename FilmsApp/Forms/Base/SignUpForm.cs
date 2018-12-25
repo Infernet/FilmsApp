@@ -20,6 +20,7 @@ namespace FilmsApp.Forms.Base
         public SignUpForm()
         {
             InitializeComponent();
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
             using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
             {
                 connection.Open();
@@ -44,13 +45,30 @@ namespace FilmsApp.Forms.Base
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             //добавить валидацию выбора
-            if (UserDAO.GetInstance().RegistrationUser(textBoxLogin.Text, textBoxPassword.Text,(string)comboRole.SelectedItem))
-            {
-                MessageBox.Show("Пользователь успешно зарегистрирован", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //переход на другую форму
-            }
+            if (textBoxLogin.BackColor == Color.Green && textBoxPassword.BackColor == Color.Green)
+                if (UserDAO.GetInstance().RegistrationUser(textBoxLogin.Text, textBoxPassword.Text, (string)comboRole.SelectedItem))
+                {
+                    MessageBox.Show("Пользователь успешно зарегистрирован", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //переход на другую форму
+                }
+                else
+                    MessageBox.Show("Регистрация не удалась, возможно данный пользватель уже существует", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void textBoxLogin_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBoxLogin.Text))
+                textBoxLogin.BackColor = Color.Red;
             else
-                MessageBox.Show("Регистрация не удалась, возможно данный пользватель уже существует", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxLogin.BackColor = Color.Green;
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBoxPassword.Text))
+                textBoxPassword.BackColor = Color.Red;
+            else
+                textBoxPassword.BackColor = Color.Green;
         }
     }
 }

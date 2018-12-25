@@ -20,7 +20,7 @@ namespace FilmsApp.Forms.Moderator
         public FeedBackModerationForm()
         {
             InitializeComponent();
-           
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
         }
 
         private void FeedBackModerationForm_Load(object sender, EventArgs e)
@@ -99,6 +99,11 @@ namespace FilmsApp.Forms.Moderator
                     MessageBox.Show(error.Message);
                 }
             }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
         }
     }
 }

@@ -44,5 +44,7 @@ namespace FilmsApp.Forms.SelectedFilmForms
             else
                 MessageBox.Show("Нельзя оставлять поля пустыми", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+
     }
 }

@@ -22,6 +22,7 @@ namespace FilmsApp.Forms.SelectedFilmForms
             using (SqlConnection connection = new SqlConnection(SqlManipul.GetInstance().ConnectionString))
             {
                 connection.Open();
+                pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
                 SqlCommand command = new SqlCommand("select Poster from Movie where MovieId=@filmid", connection);
                 command.Parameters.Add(new SqlParameter("@filmid", SqlDbType.Int) { Value = SqlManipul.GetInstance().CurrentFilmId });
                 path=Application.StartupPath+@"\Resources\Images\"+ command.ExecuteScalar().ToString();
@@ -58,6 +59,11 @@ namespace FilmsApp.Forms.SelectedFilmForms
                 img.Save(savePosterDialog.FileName);
 
             }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult=DialogResult.Abort;
         }
     }
 }

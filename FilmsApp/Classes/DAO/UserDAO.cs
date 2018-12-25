@@ -113,13 +113,11 @@ namespace FilmsApp.Classes.DAO
                     MessageBox.Show(error.Message, "Ошибка при попытке регистрации", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     transaction.Rollback();
                 }
-                if (result)
-                    return true;
-                else
-                    return false;
             }
-
-            //return result;
+            if (result)
+                return true;
+            else
+                return false;
         }
     }
 }

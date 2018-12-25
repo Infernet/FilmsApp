@@ -1,4 +1,5 @@
-﻿using FilmsApp.Classes.SQL;
+﻿using FilmsApp.Classes.DAO;
+using FilmsApp.Classes.SQL;
 using FilmsApp.Forms.Admin;
 using FilmsApp.Forms.Moderator;
 using System;
@@ -21,6 +22,22 @@ namespace FilmsApp.Forms.Base
             InitializeComponent();
             dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             SqlManipul.GetInstance().DataSetMovies = movieDBDataSet;
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
+            switch (UserDAO.GetInstance().Role)
+            {
+                case "Администратор":
+                    buttonFilmAdd.Visible = true;
+                    buttonFilmAdd.Enabled = true;
+                    buttonModeratorFeedBack.Visible = true;
+                    buttonModeratorFeedBack.Enabled = true;
+                    break;
+                case "Модератор":
+                    buttonModeratorFeedBack.Visible = true;
+                    buttonModeratorFeedBack.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void SelectedFilmForm_Load_1(object sender, EventArgs e)
@@ -42,7 +59,7 @@ namespace FilmsApp.Forms.Base
 
         private void buttonSelectFilther_Click(object sender, EventArgs e)
         {
-            DialogResult result= new MovieFilterForm().ShowDialog();
+            DialogResult result = ShowNextForm(new MovieFilterForm(), true);
             switch (result)
             {
                 case DialogResult.Abort:
@@ -73,8 +90,14 @@ namespace FilmsApp.Forms.Base
 
         private void buttonShowSelectedFilm_Click(object sender, EventArgs e)
         {
-            if(SqlManipul.GetInstance().CurrentFilmId!=-1)
-            ShowNextForm(new ShowFilmForm(), false);
+            if (SqlManipul.GetInstance().CurrentFilmId != -1)
+            {
+                DialogResult result = ShowNextForm(new ShowFilmForm(), true);
+                if (result == DialogResult.Abort)
+                    DialogResult = DialogResult.Abort;
+            }
+            else
+                MessageBox.Show("Для просмотра подробной информации о фильме, его следует выбрать.", "Фильм не выбран", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
 
@@ -83,10 +106,7 @@ namespace FilmsApp.Forms.Base
             try
             {
                 if (dataGridView1.DataSource != null)
-                {
-                    //MessageBox.Show(dataGridView1.CurrentRow.Cells[1].Value.ToString(), dataGridView1.CurrentRow.Cells[3].Value.ToString());
                     SqlManipul.GetInstance().CurrentFilmId = (int)dataGridView1.CurrentRow.Cells[1].Value;
-                }
             }
             catch (Exception error)
             {
@@ -96,14 +116,17 @@ namespace FilmsApp.Forms.Base
 
         private void buttonModeratorFeedBack_Click(object sender, EventArgs e)
         {
-            ShowNextForm(new FeedBackModerationForm());
+            DialogResult result = ShowNextForm(new FeedBackModerationForm(), true);
+            if (result == DialogResult.Abort)
+                DialogResult = DialogResult.Abort;
         }
 
         private void buttonFilmAdd_Click(object sender, EventArgs e)
         {
-            ShowNextForm(new FilmAddForm());
-            
-
+            DialogResult result = ShowNextForm(new FilmAddForm(), true);
+            if (result == DialogResult.Abort)
+                DialogResult = DialogResult.Abort;
+            SelectedFilmForm_Load_1(null, null);
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

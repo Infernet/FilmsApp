@@ -17,10 +17,11 @@ namespace FilmsApp.Forms.Base
     /// </summary>
     public partial class SignInForm : BaseForm
     {
-        private Regex loginRegex = new Regex(@"^(([A-Z]|[a-z])([\w\D][^а-яё][^А-Яё]){2,5})$");
         public SignInForm()
         {
             InitializeComponent();
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
+            
         }
         /// <summary>
         /// отправка запроса к базе данных на вход
@@ -29,14 +30,15 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            if (UserDAO.GetInstance().SignIn(textBoxLogin.Text, textBoxPassword.Text))
-            {
-                MessageBox.Show("Авторизация успешно пройдена, " + UserDAO.GetInstance().Role, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //переход к главному окну
-                ShowNextForm(new SelectedFilmForm());
-            }
-            else
-                MessageBox.Show("Авторизация не удалась, проверьте правильность ввода логина и пароля", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (textBoxLogin.BackColor == Color.Green && textBoxPassword.BackColor == Color.Green)
+                if (UserDAO.GetInstance().SignIn(textBoxLogin.Text, textBoxPassword.Text))
+                {
+                    MessageBox.Show("Авторизация успешно пройдена, " + UserDAO.GetInstance().Role, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //переход к главному окну
+                    ShowNextForm(new SelectedFilmForm());
+                }
+                else
+                    MessageBox.Show("Авторизация не удалась, проверьте правильность ввода логина и пароля", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         /// <summary>
         /// переход на форму регистрации
@@ -46,7 +48,7 @@ namespace FilmsApp.Forms.Base
         private void buttonRegistration_Click(object sender, EventArgs e)
         {
             //открытие формы регистрации
-            ShowNextForm(new SignUpForm(), true);
+            ShowNextForm(new SignUpForm());
         }
         /// <summary>
         /// произвести вход как посетитель
@@ -70,11 +72,10 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void textBoxLogin_TextChanged(object sender, EventArgs e)
         {
-            //добавить валидацию
-            //if (loginRegex.IsMatch(textBoxLogin.Text))
-            //    textBoxLogin.BackColor = Color.Green;
-            //else
-            //    textBoxLogin.BackColor = Color.Red;
+            if (String.IsNullOrWhiteSpace(textBoxLogin.Text))
+                textBoxLogin.BackColor = Color.Red;
+            else
+                textBoxLogin.BackColor = Color.Green;
         }
         /// <summary>
         /// проверка правильности ввода пароля
@@ -83,7 +84,10 @@ namespace FilmsApp.Forms.Base
         /// <param name="e"></param>
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {
-            //добавить валидацию
+            if (String.IsNullOrWhiteSpace(textBoxPassword.Text))
+                textBoxPassword.BackColor = Color.Red;
+            else
+                textBoxPassword.BackColor = Color.Green;
         }
     }
 }

@@ -22,9 +22,10 @@ namespace FilmsApp.Forms.Base
         {
             InitializeComponent();
             LoadData();
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
             //adapter.Tables[0].Select(cmd)[0]["Рейтинг /10"] = "1";
             //tbRating.Text = adapter.Tables[0].Select(cmd)[0][2].ToString();
-            
+
         }
 
         /// <summary>
@@ -137,7 +138,9 @@ namespace FilmsApp.Forms.Base
 
         private void buttonAddFeedBack_Click(object sender, EventArgs e)
         {
-            ShowNextForm(new FeedBackAddForm(), true);
+            DialogResult result = new FeedBackAddForm().ShowDialog();
+            if (result == DialogResult.Abort)
+                DialogResult = DialogResult.Abort;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
