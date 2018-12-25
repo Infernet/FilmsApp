@@ -2,15 +2,11 @@
 using FilmsApp.Classes.SQL;
 using FilmsApp.Forms.Admin;
 using FilmsApp.Forms.Moderator;
+using FilmsApp.Forms.SelectedFilmForms;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FilmsApp.Forms.Base
@@ -49,7 +45,7 @@ namespace FilmsApp.Forms.Base
             // TODO: данная строка кода позволяет загрузить данные в таблицу "movieDBDataSet1.vMovies". При необходимости она может быть перемещена или удалена.
             this.vMoviesTableAdapter.Fill(this.movieDBDataSet.vMovies);
 
-
+            dataGridView1.Sort(dataGridView1.Columns["рейтинг10DataGridViewTextBoxColumn"], ListSortDirection.Descending);
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 dataGridView1.Rows[i].Cells["PosterImage"].Value = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
         }
@@ -88,6 +84,7 @@ namespace FilmsApp.Forms.Base
                 default:
                     break;
             }
+            dataGridView1.Sort(dataGridView1.Columns["рейтинг10DataGridViewTextBoxColumn"], ListSortDirection.Descending);
             if (result != DialogResult.Abort)
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     dataGridView1.Rows[i].Cells["PosterImage"].Value = new Bitmap(Application.StartupPath + @"\Resources\Images\" + (string)dataGridView1.Rows[i].Cells["posterData"].Value);
@@ -100,6 +97,7 @@ namespace FilmsApp.Forms.Base
                 DialogResult result = ShowNextForm(new ShowFilmForm(), true);
                 if (result == DialogResult.Abort)
                     DialogResult = DialogResult.Abort;
+                dataGridView1.Sort(dataGridView1.Columns["рейтинг10DataGridViewTextBoxColumn"], ListSortDirection.Descending);
             }
             else
                 MessageBox.Show("Для просмотра подробной информации о фильме, его следует выбрать.", "Фильм не выбран", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -121,14 +119,14 @@ namespace FilmsApp.Forms.Base
 
         private void buttonModeratorFeedBack_Click(object sender, EventArgs e)
         {
-            DialogResult result = ShowNextForm(new FeedBackModerationForm(), true);
+            DialogResult result = ShowNextForm(new FeedBackModerationForm());
             if (result == DialogResult.Abort)
                 DialogResult = DialogResult.Abort;
         }
 
         private void buttonFilmAdd_Click(object sender, EventArgs e)
         {
-            DialogResult result = ShowNextForm(new FilmAddForm(), true);
+            DialogResult result = ShowNextForm(new FilmAddForm());
             if (result == DialogResult.Abort)
                 DialogResult = DialogResult.Abort;
             SelectedFilmForm_Load_1(null, null);

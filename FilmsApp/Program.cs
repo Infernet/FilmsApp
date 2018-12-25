@@ -1,10 +1,5 @@
-﻿using FilmsApp.Forms.Admin;
-using FilmsApp.Forms.Base;
-using FilmsApp.Forms.SelectedFilmForms;
+﻿using FilmsApp.Forms.Base;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FilmsApp

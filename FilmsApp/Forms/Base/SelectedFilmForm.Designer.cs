@@ -76,7 +76,7 @@ namespace FilmsApp.Forms.Base
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -112,6 +112,7 @@ namespace FilmsApp.Forms.Base
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(5, 5);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -170,7 +171,7 @@ namespace FilmsApp.Forms.Base
             this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.названиеDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.названиеDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
@@ -183,6 +184,7 @@ namespace FilmsApp.Forms.Base
             this.годВыходаDataGridViewTextBoxColumn.DataPropertyName = "Год выхода";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.годВыходаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.годВыходаDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.годВыходаDataGridViewTextBoxColumn.HeaderText = "Год выхода";
@@ -195,6 +197,7 @@ namespace FilmsApp.Forms.Base
             this.языкDataGridViewTextBoxColumn.DataPropertyName = "Язык";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.языкDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.языкDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.языкDataGridViewTextBoxColumn.HeaderText = "Язык";
@@ -208,6 +211,7 @@ namespace FilmsApp.Forms.Base
             this.длительностьминDataGridViewTextBoxColumn.DataPropertyName = "Длительность (мин)";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.длительностьминDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.длительностьминDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.длительностьминDataGridViewTextBoxColumn.HeaderText = "Длительность (мин)";
@@ -220,6 +224,7 @@ namespace FilmsApp.Forms.Base
             this.жанрDataGridViewTextBoxColumn.DataPropertyName = "Жанр";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.жанрDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.жанрDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.жанрDataGridViewTextBoxColumn.HeaderText = "Жанр";
@@ -233,6 +238,7 @@ namespace FilmsApp.Forms.Base
             this.странаDataGridViewTextBoxColumn.DataPropertyName = "Страна";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.странаDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.странаDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.странаDataGridViewTextBoxColumn.HeaderText = "Страна";
@@ -246,6 +252,7 @@ namespace FilmsApp.Forms.Base
             this.режиссёрDataGridViewTextBoxColumn.DataPropertyName = "Режиссёр";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.режиссёрDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.режиссёрDataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.режиссёрDataGridViewTextBoxColumn.HeaderText = "Режиссёр";
@@ -259,6 +266,7 @@ namespace FilmsApp.Forms.Base
             this.рейтинг10DataGridViewTextBoxColumn.DataPropertyName = "Рейтинг /10";
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.рейтинг10DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.рейтинг10DataGridViewTextBoxColumn.FillWeight = 22.84264F;
             this.рейтинг10DataGridViewTextBoxColumn.HeaderText = "Рейтинг /10";

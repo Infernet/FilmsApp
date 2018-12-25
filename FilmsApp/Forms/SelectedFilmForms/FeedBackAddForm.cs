@@ -1,14 +1,9 @@
 ﻿using FilmsApp.Classes.SQL;
 using FilmsApp.Forms.Base;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FilmsApp.Forms.SelectedFilmForms
@@ -18,6 +13,7 @@ namespace FilmsApp.Forms.SelectedFilmForms
         public FeedBackAddForm()
         {
             InitializeComponent();
+            pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -45,6 +41,9 @@ namespace FilmsApp.Forms.SelectedFilmForms
                 MessageBox.Show("Нельзя оставлять поля пустыми", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult= DialogResult.Abort;
+        }
     }
 }

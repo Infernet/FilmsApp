@@ -90,10 +90,10 @@
             // 
             this.buttonSignInAsVisitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.buttonSignInAsVisitor.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSignInAsVisitor.Location = new System.Drawing.Point(307, 287);
+            this.buttonSignInAsVisitor.Location = new System.Drawing.Point(283, 287);
             this.buttonSignInAsVisitor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSignInAsVisitor.Name = "buttonSignInAsVisitor";
-            this.buttonSignInAsVisitor.Size = new System.Drawing.Size(250, 39);
+            this.buttonSignInAsVisitor.Size = new System.Drawing.Size(196, 39);
             this.buttonSignInAsVisitor.TabIndex = 4;
             this.buttonSignInAsVisitor.Text = "Войти как посетитель";
             this.buttonSignInAsVisitor.UseVisualStyleBackColor = false;
@@ -137,10 +137,10 @@
             // 
             // pictureBoxIcon
             // 
-            this.pictureBoxIcon.Location = new System.Drawing.Point(307, 27);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(307, 55);
             this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(250, 250);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(250, 193);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 8;
             this.pictureBoxIcon.TabStop = false;

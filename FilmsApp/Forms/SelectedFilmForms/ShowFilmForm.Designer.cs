@@ -1,4 +1,4 @@
-﻿namespace FilmsApp.Forms.Base
+﻿namespace FilmsApp.Forms.SelectedFilmForms
 {
     partial class ShowFilmForm
     {
