@@ -67,6 +67,7 @@
             this.tbComment.MaxLength = 2000;
             this.tbComment.Multiline = true;
             this.tbComment.Name = "tbComment";
+            this.tbComment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbComment.Size = new System.Drawing.Size(493, 397);
             this.tbComment.TabIndex = 1;
             // 

@@ -48,6 +48,8 @@ namespace FilmsApp.Forms.Base
                 }
                 else
                     MessageBox.Show("Регистрация не удалась, возможно данный пользватель уже существует", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Введите логин и пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void textBoxLogin_TextChanged(object sender, EventArgs e)

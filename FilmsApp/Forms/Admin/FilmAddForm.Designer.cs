@@ -53,8 +53,8 @@
             this.lRated = new System.Windows.Forms.Label();
             this.lRuntime = new System.Windows.Forms.Label();
             this.lReleased = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gBAdditionParam = new System.Windows.Forms.GroupBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.tBAwards = new System.Windows.Forms.TextBox();
             this.lAwards = new System.Windows.Forms.Label();
             this.numericMetaScore = new System.Windows.Forms.NumericUpDown();
@@ -76,6 +76,9 @@
             this.lActors = new System.Windows.Forms.Label();
             this.dGVActors = new System.Windows.Forms.DataGridView();
             this.openPosterDialog = new System.Windows.Forms.OpenFileDialog();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dGVLanguage)).BeginInit();
             this.gBMainParam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
@@ -83,8 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVGenre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRuntime)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.gBAdditionParam.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMetaScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericImdbVotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericImdbRated)).BeginInit();
@@ -92,6 +95,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVWriter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVActors)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lTitle
@@ -107,11 +113,11 @@
             // tbTitle
             // 
             this.tbTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
-            this.tbTitle.Location = new System.Drawing.Point(195, 208);
+            this.tbTitle.Location = new System.Drawing.Point(101, 208);
             this.tbTitle.Margin = new System.Windows.Forms.Padding(4);
             this.tbTitle.MaxLength = 50;
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(239, 30);
+            this.tbTitle.Size = new System.Drawing.Size(333, 30);
             this.tbTitle.TabIndex = 1;
             // 
             // dGVLanguage
@@ -129,9 +135,9 @@
             // 
             this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.buttonSubmit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonSubmit.Location = new System.Drawing.Point(940, 440);
+            this.buttonSubmit.Location = new System.Drawing.Point(940, 418);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(252, 34);
+            this.buttonSubmit.Size = new System.Drawing.Size(247, 52);
             this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Добавить новый фильм";
             this.buttonSubmit.UseVisualStyleBackColor = false;
@@ -167,18 +173,17 @@
             this.gBMainParam.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gBMainParam.Location = new System.Drawing.Point(3, 3);
             this.gBMainParam.Name = "gBMainParam";
-            this.gBMainParam.Size = new System.Drawing.Size(1201, 491);
+            this.gBMainParam.Size = new System.Drawing.Size(1193, 515);
             this.gBMainParam.TabIndex = 5;
             this.gBMainParam.TabStop = false;
-            this.gBMainParam.Text = "Обязательные параметры";
             // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.buttonExit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonExit.Location = new System.Drawing.Point(345, 157);
+            this.buttonExit.Location = new System.Drawing.Point(940, 476);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(89, 44);
+            this.buttonExit.Size = new System.Drawing.Size(247, 34);
             this.buttonExit.TabIndex = 23;
             this.buttonExit.Text = "Выйти";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -188,7 +193,7 @@
             // 
             this.pictureBoxIcon.Location = new System.Drawing.Point(9, 23);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(330, 178);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(425, 178);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 22;
             this.pictureBoxIcon.TabStop = false;
@@ -206,7 +211,7 @@
             // 
             this.buttonSelectPoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.buttonSelectPoster.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonSelectPoster.Location = new System.Drawing.Point(518, 440);
+            this.buttonSelectPoster.Location = new System.Drawing.Point(518, 476);
             this.buttonSelectPoster.Name = "buttonSelectPoster";
             this.buttonSelectPoster.Size = new System.Drawing.Size(119, 34);
             this.buttonSelectPoster.TabIndex = 20;
@@ -217,7 +222,7 @@
             // lPoster
             // 
             this.lPoster.AutoSize = true;
-            this.lPoster.Location = new System.Drawing.Point(441, 445);
+            this.lPoster.Location = new System.Drawing.Point(441, 482);
             this.lPoster.Name = "lPoster";
             this.lPoster.Size = new System.Drawing.Size(71, 23);
             this.lPoster.TabIndex = 19;
@@ -227,7 +232,7 @@
             // 
             this.cBAdditionalParam.AutoSize = true;
             this.cBAdditionalParam.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cBAdditionalParam.Location = new System.Drawing.Point(669, 444);
+            this.cBAdditionalParam.Location = new System.Drawing.Point(643, 481);
             this.cBAdditionalParam.Name = "cBAdditionalParam";
             this.cBAdditionalParam.Size = new System.Drawing.Size(265, 27);
             this.cBAdditionalParam.TabIndex = 6;
@@ -270,7 +275,7 @@
             this.dGVDirector.Location = new System.Drawing.Point(829, 241);
             this.dGVDirector.Name = "dGVDirector";
             this.dGVDirector.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVDirector.Size = new System.Drawing.Size(363, 171);
+            this.dGVDirector.Size = new System.Drawing.Size(358, 171);
             this.dGVDirector.TabIndex = 14;
             // 
             // dGVCountry
@@ -289,10 +294,10 @@
             this.dGVGenre.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.dGVGenre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVGenre.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.dGVGenre.Location = new System.Drawing.Point(832, 41);
+            this.dGVGenre.Location = new System.Drawing.Point(829, 41);
             this.dGVGenre.Name = "dGVGenre";
             this.dGVGenre.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVGenre.Size = new System.Drawing.Size(360, 162);
+            this.dGVGenre.Size = new System.Drawing.Size(358, 162);
             this.dGVGenre.TabIndex = 12;
             // 
             // tbRated
@@ -326,7 +331,7 @@
             this.tbPlot.MaxLength = 500;
             this.tbPlot.Multiline = true;
             this.tbPlot.Name = "tbPlot";
-            this.tbPlot.Size = new System.Drawing.Size(422, 107);
+            this.tbPlot.Size = new System.Drawing.Size(422, 131);
             this.tbPlot.TabIndex = 9;
             // 
             // lPlot
@@ -377,23 +382,9 @@
             this.lReleased.TabIndex = 4;
             this.lReleased.Text = "Дата выхода";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.gBMainParam, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gBAdditionParam, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.59233F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.40767F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1207, 834);
-            this.tableLayoutPanel1.TabIndex = 6;
-            // 
             // gBAdditionParam
             // 
+            this.gBAdditionParam.Controls.Add(this.pictureBoxLogo);
             this.gBAdditionParam.Controls.Add(this.tBAwards);
             this.gBAdditionParam.Controls.Add(this.lAwards);
             this.gBAdditionParam.Controls.Add(this.numericMetaScore);
@@ -417,28 +408,36 @@
             this.gBAdditionParam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gBAdditionParam.Enabled = false;
             this.gBAdditionParam.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.gBAdditionParam.Location = new System.Drawing.Point(3, 500);
+            this.gBAdditionParam.Location = new System.Drawing.Point(3, 3);
             this.gBAdditionParam.Name = "gBAdditionParam";
-            this.gBAdditionParam.Size = new System.Drawing.Size(1201, 331);
+            this.gBAdditionParam.Size = new System.Drawing.Size(1193, 515);
             this.gBAdditionParam.TabIndex = 6;
             this.gBAdditionParam.TabStop = false;
-            this.gBAdditionParam.Text = "Дополнительные параметры";
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Location = new System.Drawing.Point(6, 22);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(425, 214);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 37;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // tBAwards
             // 
             this.tBAwards.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.tBAwards.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tBAwards.Location = new System.Drawing.Point(445, 210);
+            this.tBAwards.Location = new System.Drawing.Point(455, 297);
             this.tBAwards.MaxLength = 100;
             this.tBAwards.Multiline = true;
             this.tBAwards.Name = "tBAwards";
-            this.tBAwards.Size = new System.Drawing.Size(358, 113);
+            this.tBAwards.Size = new System.Drawing.Size(348, 203);
             this.tBAwards.TabIndex = 36;
             // 
             // lAwards
             // 
             this.lAwards.AutoSize = true;
-            this.lAwards.Location = new System.Drawing.Point(441, 181);
+            this.lAwards.Location = new System.Drawing.Point(451, 266);
             this.lAwards.Name = "lAwards";
             this.lAwards.Size = new System.Drawing.Size(79, 23);
             this.lAwards.TabIndex = 35;
@@ -447,7 +446,7 @@
             // numericMetaScore
             // 
             this.numericMetaScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
-            this.numericMetaScore.Location = new System.Drawing.Point(206, 266);
+            this.numericMetaScore.Location = new System.Drawing.Point(206, 470);
             this.numericMetaScore.Name = "numericMetaScore";
             this.numericMetaScore.Size = new System.Drawing.Size(233, 30);
             this.numericMetaScore.TabIndex = 34;
@@ -456,7 +455,7 @@
             // numericImdbVotes
             // 
             this.numericImdbVotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
-            this.numericImdbVotes.Location = new System.Drawing.Point(206, 219);
+            this.numericImdbVotes.Location = new System.Drawing.Point(206, 427);
             this.numericImdbVotes.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -476,7 +475,7 @@
             0,
             0,
             65536});
-            this.numericImdbRated.Location = new System.Drawing.Point(206, 179);
+            this.numericImdbRated.Location = new System.Drawing.Point(206, 384);
             this.numericImdbRated.Maximum = new decimal(new int[] {
             10,
             0,
@@ -490,7 +489,7 @@
             // lMetascore
             // 
             this.lMetascore.AutoSize = true;
-            this.lMetascore.Location = new System.Drawing.Point(18, 268);
+            this.lMetascore.Location = new System.Drawing.Point(18, 472);
             this.lMetascore.Name = "lMetascore";
             this.lMetascore.Size = new System.Drawing.Size(94, 23);
             this.lMetascore.TabIndex = 31;
@@ -499,7 +498,7 @@
             // lImdbVotes
             // 
             this.lImdbVotes.AutoSize = true;
-            this.lImdbVotes.Location = new System.Drawing.Point(18, 221);
+            this.lImdbVotes.Location = new System.Drawing.Point(18, 429);
             this.lImdbVotes.Name = "lImdbVotes";
             this.lImdbVotes.Size = new System.Drawing.Size(113, 23);
             this.lImdbVotes.TabIndex = 30;
@@ -508,7 +507,7 @@
             // lImdbRated
             // 
             this.lImdbRated.AutoSize = true;
-            this.lImdbRated.Location = new System.Drawing.Point(18, 181);
+            this.lImdbRated.Location = new System.Drawing.Point(18, 386);
             this.lImdbRated.Name = "lImdbRated";
             this.lImdbRated.Size = new System.Drawing.Size(129, 23);
             this.lImdbRated.TabIndex = 29;
@@ -517,7 +516,7 @@
             // numericBoxOffice
             // 
             this.numericBoxOffice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
-            this.numericBoxOffice.Location = new System.Drawing.Point(206, 133);
+            this.numericBoxOffice.Location = new System.Drawing.Point(206, 341);
             this.numericBoxOffice.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -531,7 +530,7 @@
             // lBoxOffice
             // 
             this.lBoxOffice.AutoSize = true;
-            this.lBoxOffice.Location = new System.Drawing.Point(18, 135);
+            this.lBoxOffice.Location = new System.Drawing.Point(18, 343);
             this.lBoxOffice.Name = "lBoxOffice";
             this.lBoxOffice.Size = new System.Drawing.Size(154, 23);
             this.lBoxOffice.TabIndex = 27;
@@ -540,7 +539,7 @@
             // dTPDvd
             // 
             this.dTPDvd.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
-            this.dTPDvd.Location = new System.Drawing.Point(206, 91);
+            this.dTPDvd.Location = new System.Drawing.Point(206, 297);
             this.dTPDvd.Name = "dTPDvd";
             this.dTPDvd.Size = new System.Drawing.Size(233, 30);
             this.dTPDvd.TabIndex = 26;
@@ -550,7 +549,7 @@
             // 
             this.tbSite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.tbSite.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbSite.Location = new System.Drawing.Point(92, 50);
+            this.tbSite.Location = new System.Drawing.Point(92, 259);
             this.tbSite.MaxLength = 100;
             this.tbSite.Name = "tbSite";
             this.tbSite.Size = new System.Drawing.Size(347, 30);
@@ -559,7 +558,7 @@
             // lDVD
             // 
             this.lDVD.AutoSize = true;
-            this.lDVD.Location = new System.Drawing.Point(18, 97);
+            this.lDVD.Location = new System.Drawing.Point(18, 300);
             this.lDVD.Name = "lDVD";
             this.lDVD.Size = new System.Drawing.Size(182, 23);
             this.lDVD.TabIndex = 24;
@@ -568,7 +567,7 @@
             // lSite
             // 
             this.lSite.AutoSize = true;
-            this.lSite.Location = new System.Drawing.Point(18, 53);
+            this.lSite.Location = new System.Drawing.Point(18, 262);
             this.lSite.Name = "lSite";
             this.lSite.Size = new System.Drawing.Size(51, 23);
             this.lSite.TabIndex = 23;
@@ -577,7 +576,7 @@
             // lWriters
             // 
             this.lWriters.AutoSize = true;
-            this.lWriters.Location = new System.Drawing.Point(825, 24);
+            this.lWriters.Location = new System.Drawing.Point(820, 24);
             this.lWriters.Name = "lWriters";
             this.lWriters.Size = new System.Drawing.Size(86, 23);
             this.lWriters.TabIndex = 22;
@@ -588,16 +587,16 @@
             this.dGVWriter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.dGVWriter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVWriter.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.dGVWriter.Location = new System.Drawing.Point(829, 50);
+            this.dGVWriter.Location = new System.Drawing.Point(824, 50);
             this.dGVWriter.Name = "dGVWriter";
             this.dGVWriter.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVWriter.Size = new System.Drawing.Size(363, 128);
+            this.dGVWriter.Size = new System.Drawing.Size(368, 186);
             this.dGVWriter.TabIndex = 21;
             // 
             // lProduction
             // 
             this.lProduction.AutoSize = true;
-            this.lProduction.Location = new System.Drawing.Point(828, 181);
+            this.lProduction.Location = new System.Drawing.Point(820, 266);
             this.lProduction.Name = "lProduction";
             this.lProduction.Size = new System.Drawing.Size(193, 23);
             this.lProduction.TabIndex = 20;
@@ -608,16 +607,16 @@
             this.dGVProduction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.dGVProduction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVProduction.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.dGVProduction.Location = new System.Drawing.Point(832, 207);
+            this.dGVProduction.Location = new System.Drawing.Point(824, 297);
             this.dGVProduction.Name = "dGVProduction";
             this.dGVProduction.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVProduction.Size = new System.Drawing.Size(363, 116);
+            this.dGVProduction.Size = new System.Drawing.Size(363, 203);
             this.dGVProduction.TabIndex = 19;
             // 
             // lActors
             // 
             this.lActors.AutoSize = true;
-            this.lActors.Location = new System.Drawing.Point(441, 24);
+            this.lActors.Location = new System.Drawing.Point(451, 24);
             this.lActors.Name = "lActors";
             this.lActors.Size = new System.Drawing.Size(73, 23);
             this.lActors.TabIndex = 18;
@@ -628,23 +627,57 @@
             this.dGVActors.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.dGVActors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVActors.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
-            this.dGVActors.Location = new System.Drawing.Point(445, 50);
+            this.dGVActors.Location = new System.Drawing.Point(455, 50);
             this.dGVActors.Name = "dGVActors";
             this.dGVActors.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVActors.Size = new System.Drawing.Size(358, 128);
+            this.dGVActors.Size = new System.Drawing.Size(348, 186);
             this.dGVActors.TabIndex = 17;
             // 
             // openPosterDialog
             // 
             this.openPosterDialog.FileName = "openFileDialog1";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1207, 557);
+            this.tabControl1.TabIndex = 7;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
+            this.tabPage1.Controls.Add(this.gBMainParam);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1199, 521);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Обязательные параметры";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
+            this.tabPage2.Controls.Add(this.gBAdditionParam);
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1199, 521);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Дополнительные параметры";
+            // 
             // FilmAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1207, 834);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1207, 557);
+            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "FilmAddForm";
             this.Text = "Добавление нового фильма";
@@ -657,9 +690,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVGenre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRuntime)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.gBAdditionParam.ResumeLayout(false);
             this.gBAdditionParam.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericMetaScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericImdbVotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericImdbRated)).EndInit();
@@ -667,6 +700,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVWriter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVActors)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -695,7 +731,6 @@
         private System.Windows.Forms.CheckBox cBAdditionalParam;
         private System.Windows.Forms.Button buttonSelectPoster;
         private System.Windows.Forms.Label lPoster;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox gBAdditionParam;
         private System.Windows.Forms.TextBox tBAwards;
         private System.Windows.Forms.Label lAwards;
@@ -720,5 +755,9 @@
         private System.Windows.Forms.OpenFileDialog openPosterDialog;
         private System.Windows.Forms.PictureBox pictureBoxIcon;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

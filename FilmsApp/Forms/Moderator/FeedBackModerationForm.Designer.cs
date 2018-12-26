@@ -71,12 +71,13 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.9434F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.0566F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 542F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 159F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 827);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.38889F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 598);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -87,7 +88,7 @@
             this.label1.Location = new System.Drawing.Point(4, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 43);
+            this.label1.Size = new System.Drawing.Size(187, 35);
             this.label1.TabIndex = 4;
             this.label1.Text = "Отзывы в ожидании:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -129,11 +130,11 @@
             this.groupBox1.Controls.Add(this.checkChagneMode);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 671);
+            this.groupBox1.Location = new System.Drawing.Point(4, 446);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(729, 152);
+            this.groupBox1.Size = new System.Drawing.Size(729, 148);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Меню";
@@ -206,10 +207,10 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(4, 43);
+            this.label2.Location = new System.Drawing.Point(4, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 41);
+            this.label2.Size = new System.Drawing.Size(187, 37);
             this.label2.TabIndex = 5;
             this.label2.Text = "Имя пользователя:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -219,7 +220,7 @@
             this.tbName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbName.Enabled = false;
-            this.tbName.Location = new System.Drawing.Point(199, 47);
+            this.tbName.Location = new System.Drawing.Point(199, 39);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(534, 28);
@@ -233,11 +234,12 @@
             this.tbComment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbComment.Enabled = false;
             this.tbComment.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbComment.Location = new System.Drawing.Point(4, 129);
+            this.tbComment.Location = new System.Drawing.Point(4, 113);
             this.tbComment.Margin = new System.Windows.Forms.Padding(4);
             this.tbComment.Multiline = true;
             this.tbComment.Name = "tbComment";
-            this.tbComment.Size = new System.Drawing.Size(729, 534);
+            this.tbComment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbComment.Size = new System.Drawing.Size(729, 325);
             this.tbComment.TabIndex = 2;
             this.tbComment.TabStop = false;
             // 
@@ -246,7 +248,7 @@
             this.dateTimePickerFeedBack.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
             this.dateTimePickerFeedBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerFeedBack.Enabled = false;
-            this.dateTimePickerFeedBack.Location = new System.Drawing.Point(199, 88);
+            this.dateTimePickerFeedBack.Location = new System.Drawing.Point(199, 76);
             this.dateTimePickerFeedBack.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFeedBack.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFeedBack.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -261,10 +263,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(4, 84);
+            this.label3.Location = new System.Drawing.Point(4, 72);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 41);
+            this.label3.Size = new System.Drawing.Size(187, 37);
             this.label3.TabIndex = 8;
             this.label3.Text = "Дата:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -277,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 827);
+            this.ClientSize = new System.Drawing.Size(737, 598);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
