@@ -29,6 +29,7 @@ namespace FilmsApp.Forms.Admin
         {
             InitializeComponent();
             pictureBoxIcon.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
+            pictureBoxLogo.Image = new Bitmap(Application.StartupPath + @"\Resources\Icons\logo1.png");
             //обязательные поля
             tableLanguage.Columns.Add("Язык");
             tableGenre.Columns.Add("Название жанра");

@@ -67,7 +67,6 @@ namespace FilmsApp.Forms.Base
                     break;
                 case DialogResult.Yes:
                     {
-                        MessageBox.Show("Фильтрация");
                         string filter = SqlManipul.GetInstance().GetFilterIdFilms();
                         if (!String.IsNullOrEmpty(filter))
                             dataGridView1.DataSource = movieDBDataSet.vMovies.Select("ID in (" + filter + ")").CopyToDataTable();
@@ -77,7 +76,6 @@ namespace FilmsApp.Forms.Base
                     break;
                 case DialogResult.No:
                     {
-                        MessageBox.Show("Сброс");
                         dataGridView1.DataSource = movieDBDataSet.vMovies;
                     }
                     break;
